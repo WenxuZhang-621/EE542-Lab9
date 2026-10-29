@@ -1,0 +1,31 @@
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+local.properties
+# Runtime/build output
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.gradle/
+.idea/
+build/
+*.apk
+*.aab
+*.gguf
+*.bin
+*.faiss
+*.pkl
+*.npy
+*.npz
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+artifacts/*
+!artifacts/.gitkeep

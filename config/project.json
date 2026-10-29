@@ -1,0 +1,25 @@
+{
+  "services": {
+    "host": "127.0.0.1",
+    "web_port": 8000,
+    "llm_api_base": "http://127.0.0.1:8001/v1",
+    "upload_port": 8501
+  },
+  "rag": {
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "separator": "\n",
+    "retrieval_k": 4
+  },
+  "embedding": {
+    "seed": 42
+  },
+  "paths": {
+    "raw": "data/raw",
+    "processed": "data/processed",
+    "chunks": "data/processed/chunks.jsonl",
+    "questions": "data/processed/questions.jsonl",
+    "indexes": "artifacts/indexes",
+    "evidence": "evidence"
+  }
+}
