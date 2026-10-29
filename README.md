@@ -1,6 +1,6 @@
 # EE542 Lab9 — Custom Chatbot
 
-主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。**目前只有课程模板和接口占位，功能还没实现。**
+主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。**C 已开始实现上传与文本预览；完整 RAG、网站集成与算法仍待完成。**
 
 ## 分工（建议，待全组确认）
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | **A：网站与系统集成** | Part 1 + Part 4 网站端 | 修改后端 `ask_llm()`，加入检索上下文；编写 RAG 接入模块；修改前端交互和来源展示 |
 | **B：Android 与自定义 Embedding** | Part 2 + Part 5 + Part 4 App 端 | 自写聚类、质心计算、直方图 embedding 和评估代码；修改 Android 配置 |
-| **C：数据与 RAG 问答** | Part 3 + Part 4 主题知识库 | 编写数据导入、切块、向量检索、问答链及命令行模块；改造现有上传页面；准备评估问题集 |
+| **C：Wenxu，数据与 RAG 问答** | Part 3 + Part 4 主题知识库 | 编写数据导入、切块、向量检索、问答链及命令行模块；改造现有上传页面；准备评估问题集 |
 
 ### A：网站与系统集成（`webapp/`）
 
@@ -58,3 +58,13 @@
 - 公共参数（端口、切块、top-k、路径）只在 `config/project.json` 修改，改它或 `shared/` 前先在群里说
 - `webapp/`、`android/` 和 `rag/reference/` 来自课程模板，不算个人贡献；每人用自己的 Git 身份提交自己的改动
 - 不提交 `.env`、签名私钥、模型文件和原始数据
+
+## C 的逐步实现
+
+学习入口：[tutorial.md](tutorial.md)。当前先做 Part 3-I 上传与文本预览；在根目录运行 `source .venv/bin/activate` 后执行 `python -m rag.run_upload`，访问 http://127.0.0.1:8501。已通过独立命令行完成 PDF 批量提取和 MySQL 原文入库；上传页仍只预览。尚未调用 OpenAI 或构建向量库。
+
+C 的入库入口：`python -m rag.ingest --input data/raw/part3-demo`。本地独立 MySQL 配置见 `infra/compose.mysql.yml`，使用本机 13306 端口；详细运行、验证和停止方式见 tutorial.md 第 2 课。
+
+C 已完成 Part 3-II.2：`rag/chunking.py` 从 MySQL 原文导出带来源/页码的 chunks.jsonl；学习代码见 tutorial.md 第 3 课。当前使用实验 PDF 作流程样例，正式主题数据尚未开始。
+
+C 已用真实 OpenAI API 建好实验 PDF 的向量库，并完成 `retrieve()`、带记忆的问答链和 `exit` 命令行（`python -m rag.cli`），见 [rag/README.md](rag/README.md)。上传页接入和 Part 4 主题数据仍待完成。

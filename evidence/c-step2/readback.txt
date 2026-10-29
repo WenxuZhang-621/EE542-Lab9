@@ -1,0 +1,3 @@
+MySQL version: 8.4.13
+{"source": "ads-cookbook.pdf", "pages": 124, "characters": 299748, "every_page_exact_match": true}
+{"source": "lab9-requirements.pdf", "pages": 6, "characters": 10074, "every_page_exact_match": true}

@@ -1,0 +1,1 @@
+PASS: 26 unique Chunk-compatible rows, 6 source pages, <=500 chars, ordered source substrings, full non-whitespace coverage.

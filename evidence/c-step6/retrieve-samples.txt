@@ -1,0 +1,16 @@
+2026-10-28 18:07:40 PDT
+Q: What chunk size should the text splitter use?
+  0.478  p.4  0d802f47ae1d  Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to spl
+  0.338  p.5  c8a9c411d625  the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other 
+  0.326  p.4  330873dc3b01  2. Take the converted text contents into Embeddings using OpenAI’s embeddings library and store them in a vect
+  0.311  p.6  36f63dd977e6   Build a normalized K-dimensional histogram vector for each context chunk of data (Take N- dimensional vector
+Q: How is the custom histogram embedding normalized?
+  0.626  p.6  36f63dd977e6   Build a normalized K-dimensional histogram vector for each context chunk of data (Take N- dimensional vector
+  0.435  p.5  c8a9c411d625  the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other 
+  0.346  p.6  76287f2ae4ca   Try different methods to improve the result of the embedding. Deliverables In the Video Log, demonstrate and
+  0.340  p.5  02da725d3bf2   Use Word2Vec to generate word vectors of an N-dimension for each word in your data.  Write custom code to c
+Q: What must the video log demonstrate?
+  0.501  p.6  76287f2ae4ca   Try different methods to improve the result of the embedding. Deliverables In the Video Log, demonstrate and
+  0.293  p.4  5b7f9633e99a  the OpenAI Embeddings to create word embeddings for those chunks and store them in a vector database. 4. Creat
+  0.276  p.3  a4de78ef1ea7  Part 3: Content Embeddings and LLM I. Website Design for Data Collection 1. Download the zip file for Part 3 2
+  0.265  p.5  c8a9c411d625  the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other 

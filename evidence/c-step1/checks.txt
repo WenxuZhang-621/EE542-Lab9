@@ -1,0 +1,17 @@
+test_blank_pdf_preserves_page (test_documents.ExtractionTests.test_blank_pdf_preserves_page) ... ok
+test_encrypted_pdf (test_documents.ExtractionTests.test_encrypted_pdf) ... ok
+test_invalid_inputs (test_documents.ExtractionTests.test_invalid_inputs) ... invalid pdf header: b'not a'
+EOF marker not found
+ok
+test_utf8_text_and_source (test_documents.ExtractionTests.test_utf8_text_and_source) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.007s
+
+OK
+2026-10-28 17:23:28.731 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-28 17:23:28.895 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+Actual course PDF: 6 pages; 10074 characters; Part 3 on page 3 verified
+Streamlit initial render PASS
+Streamlit multi-file extraction render PASS (injected UploadedFile-like bytes; not browser upload)
+No OpenAI API, MySQL, chunking or index validation performed.

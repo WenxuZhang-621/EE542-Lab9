@@ -1,0 +1,24 @@
+2026-10-28 18:09:02 PDT
+$ python -m rag.cli --input data/raw/part3-lab-only
+Stored lab9-requirements.pdf: skipped (6 pages)
+Chunked: 26 chunks, 205-499 characters
+Index created: 26 chunks, text-embedding-3-small (1536 dims)
+Chat model: gpt-6-luna, top-k: 4
+Type a question, or 'exit' to quit.
+
+Question: Which LangChain class should split the text?
+
+Answer: Use LangChain’s `CharacterTextSplitter` to split the text into chunks [1].
+
+Retrieved context:
+  [1] score 0.525 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+  [2] score 0.449 · lab9-requirements.pdf p.4 · 5b7f9633e99a
+      the OpenAI Embeddings to create word embeddings for those chunks and store them in a vector database. 4. Create a Conversation Chain Write a function that woul…
+  [3] score 0.405 · lab9-requirements.pdf p.4 · 330873dc3b01
+      2. Take the converted text contents into Embeddings using OpenAI’s embeddings library and store them in a vector database. The LLM model should generate custom…
+  [4] score 0.312 · lab9-requirements.pdf p.3 · a4de78ef1ea7
+      Part 3: Content Embeddings and LLM I. Website Design for Data Collection 1. Download the zip file for Part 3 2. Design a website that you can use to upload PDF…
+
+Question: exit
+exit code: 0

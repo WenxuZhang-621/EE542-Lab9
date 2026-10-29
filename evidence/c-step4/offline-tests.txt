@@ -1,0 +1,11 @@
+test_failure_does_not_publish_index (test_vectorstore.VectorStoreTests.test_failure_does_not_publish_index) ... ok
+test_invalid_response_indices (test_vectorstore.VectorStoreTests.test_invalid_response_indices) ... ok
+test_normalized_cosine_ranking (test_vectorstore.VectorStoreTests.test_normalized_cosine_ranking) ... ok
+test_response_order_and_batching (test_vectorstore.VectorStoreTests.test_response_order_and_batching) ... ok
+test_store_reload_reuse_and_corruption (test_vectorstore.VectorStoreTests.test_store_reload_reuse_and_corruption) ... ok
+test_zero_vectors_rejected (test_vectorstore.VectorStoreTests.test_zero_vectors_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.023s
+
+OK

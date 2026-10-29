@@ -1,0 +1,81 @@
+2026-10-28 18:08:37 PDT
+$ python -m rag.cli  (questions piped from stdin)
+Index unchanged: 26 chunks, text-embedding-3-small (1536 dims)
+Chat model: gpt-6-luna, top-k: 4
+Type a question, or 'exit' to quit.
+
+Question: What does Part 5 ask us to build for each chunk?
+
+Answer: Part 5 asks you to build a **normalized K-dimensional histogram vector** for each context chunk, grouping its word vectors by their distance to centroid vectors, then dividing the histogram by the number of words in the chunk. [3]
+
+Retrieved context:
+  [1] score 0.407 · lab9-requirements.pdf p.4 · 5b7f9633e99a
+      the OpenAI Embeddings to create word embeddings for those chunks and store them in a vector database. 4. Create a Conversation Chain Write a function that woul…
+  [2] score 0.389 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+  [3] score 0.373 · lab9-requirements.pdf p.6 · 36f63dd977e6
+       Build a normalized K-dimensional histogram vector for each context chunk of data (Take N- dimensional vector of the word in each chunk and bin it into an ent…
+  [4] score 0.366 · lab9-requirements.pdf p.5 · c8a9c411d625
+      the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other ways to vectorize your context chunks. One effect…
+
+Question: How should that vector be normalized?
+Standalone question: How should the K-dimensional histogram vector for each context chunk be normalized?
+
+Answer: Divide each histogram entry by the total number of words in that context chunk. [1]
+
+Retrieved context:
+  [1] score 0.753 · lab9-requirements.pdf p.6 · 36f63dd977e6
+       Build a normalized K-dimensional histogram vector for each context chunk of data (Take N- dimensional vector of the word in each chunk and bin it into an ent…
+  [2] score 0.541 · lab9-requirements.pdf p.5 · c8a9c411d625
+      the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other ways to vectorize your context chunks. One effect…
+  [3] score 0.462 · lab9-requirements.pdf p.5 · 02da725d3bf2
+       Use Word2Vec to generate word vectors of an N-dimension for each word in your data.  Write custom code to cluster all of the words into K clusters.  Determ…
+  [4] score 0.392 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+
+Question: What should we try after building it?
+Standalone question: What should we try after building the normalized K-dimensional histogram vector for each context chunk?
+
+Answer: After building the normalized K-dimensional histogram vector for each context chunk, try different methods to improve the embedding results. [1]
+
+Retrieved context:
+  [1] score 0.796 · lab9-requirements.pdf p.6 · 36f63dd977e6
+       Build a normalized K-dimensional histogram vector for each context chunk of data (Take N- dimensional vector of the word in each chunk and bin it into an ent…
+  [2] score 0.575 · lab9-requirements.pdf p.5 · c8a9c411d625
+      the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other ways to vectorize your context chunks. One effect…
+  [3] score 0.496 · lab9-requirements.pdf p.5 · 02da725d3bf2
+       Use Word2Vec to generate word vectors of an N-dimension for each word in your data.  Write custom code to cluster all of the words into K clusters.  Determ…
+  [4] score 0.444 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+
+Question: What is the capital of France?
+
+Answer: The documents do not cover the capital of France.
+
+Retrieved context:
+  [1] score 0.062 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+  [2] score 0.056 · lab9-requirements.pdf p.4 · 46d133550894
+      sections to be embedded c) Embed: Each section is embedded with the OpenAI API d) Store: Embeddings are saved (for large datasets, use a vector database) e) Gi…
+  [3] score 0.055 · lab9-requirements.pdf p.2 · 76df3bf4043d
+      python -m vllm.entrypoints.openai.api_server --model <your-llama3-model> --host 0.0.0.0 --port 8001 3. Configure the chat app .env similarly to Option A. VII. …
+  [4] score 0.055 · lab9-requirements.pdf p.4 · 330873dc3b01
+      2. Take the converted text contents into Embeddings using OpenAI’s embeddings library and store them in a vector database. The LLM model should generate custom…
+
+Question: Part 3 用哪个工具切块？每块多大？
+Standalone question: 在 Part 3 中，使用哪个工具进行文本切块，每个文本块的大小是多少？
+
+Answer: Part 3 使用 LangChain 的 `CharacterTextSplitter` 进行文本切块，每个文本块大小为 500。[2]
+
+Retrieved context:
+  [1] score 0.380 · lab9-requirements.pdf p.3 · a4de78ef1ea7
+      Part 3: Content Embeddings and LLM I. Website Design for Data Collection 1. Download the zip file for Part 3 2. Design a website that you can use to upload PDF…
+  [2] score 0.348 · lab9-requirements.pdf p.4 · 0d802f47ae1d
+      Process the extracted data into chunks of size 500. Use the CharacterTextSplitter provided by langChain to split the text. Read about the different parameters …
+  [3] score 0.318 · lab9-requirements.pdf p.4 · 330873dc3b01
+      2. Take the converted text contents into Embeddings using OpenAI’s embeddings library and store them in a vector database. The LLM model should generate custom…
+  [4] score 0.312 · lab9-requirements.pdf p.5 · c8a9c411d625
+      the system can be potentially useful in a real-world situation. Part 5: Custom Embedding There are many other ways to vectorize your context chunks. One effect…
+
+Question: exit
+exit code: 0

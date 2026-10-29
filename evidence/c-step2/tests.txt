@@ -1,0 +1,14 @@
+test_blank_pdf_preserves_page (test_documents.ExtractionTests.test_blank_pdf_preserves_page) ... ok
+test_encrypted_pdf (test_documents.ExtractionTests.test_encrypted_pdf) ... ok
+test_invalid_inputs (test_documents.ExtractionTests.test_invalid_inputs) ... invalid pdf header: b'not a'
+EOF marker not found
+ok
+test_utf8_text_and_source (test_documents.ExtractionTests.test_utf8_text_and_source) ... ok
+test_empty_document_rejected (test_storage_mysql.MySQLStorageTests.test_empty_document_rejected) ... ok
+test_failure_rolls_back_document_and_pages (test_storage_mysql.MySQLStorageTests.test_failure_rolls_back_document_and_pages) ... ok
+test_roundtrip_duplicate_and_new_version (test_storage_mysql.MySQLStorageTests.test_roundtrip_duplicate_and_new_version) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.088s
+
+OK

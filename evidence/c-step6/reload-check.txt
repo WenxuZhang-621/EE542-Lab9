@@ -1,0 +1,1 @@
+reload ok: 26 vectors, 1536 dims, 26 chunks, model text-embedding-3-small
