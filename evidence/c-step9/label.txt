@@ -1,0 +1,32 @@
+  2 relevant | How many credit hours must an undergraduate F-1 student take each term to keep a full course of study?
+  2 relevant | How many online or distance-learning classes can count toward an F-1 student's full course of study each term?
+  4 relevant | How early can a new F-1 student enter the United States before the program start date?
+  1 relevant | Under the current regulation, what is the maximum period of admission for an F-1 student?
+  1 relevant | How many days does an F-1 student have to leave the United States after finishing the program and any practical training?
+  1 relevant | Within how many days must an F-1 student report a change of address?
+  1 relevant | After transferring, how soon must an F-1 student contact the DSO at the new school?
+  1 relevant | If an F-1 student is outside the United States for up to five months, can they be readmitted to continue studying?
+  1 relevant | Can the F-2 spouse of an F-1 student work in the United States?
+  2 relevant | Do I need to pay the I-901 SEVIS fee again to reenter the United States after travel?
+  2 relevant | How many hours per week can an F-1 student work on campus while school is in session?
+  1 relevant | Can an F-1 student work on campus full-time during school breaks?
+  1 relevant | What is curricular practical training (CPT)?
+  2 relevant | Does a year of full-time CPT affect eligibility for post-completion OPT?
+  3 relevant | How many months of OPT can a student get at each degree level?
+  4 relevant | What is the earliest and latest time to file for post-completion OPT?
+  1 relevant | How many days of unemployment are allowed during post-completion OPT?
+  2 relevant | How many total days of unemployment are allowed for a student with a STEM OPT extension?
+  2 relevant | How long is the STEM OPT extension?
+  5 relevant | What must a STEM OPT employer be enrolled in?
+  3 relevant | Which form is the training plan for STEM OPT students?
+  4 relevant | Can I start working on OPT before my EAD arrives?
+  2 relevant | What is the cap-gap extension for F-1 students with an H-1B petition?
+  1 relevant | How early can an F-1 student apply for an on-campus job before classes start?
+  1 relevant | Is there a minimum income that requires a foreign student to file a U.S. tax return?
+  3 relevant | For how many years can a student be an exempt individual for the substantial presence test?
+  4 relevant | Which form do F-1 students file to explain they are exempt individuals?
+  1 relevant | Where do I mail Form 8843 if I do not have to file a tax return?
+  2 relevant | Can a nonresident alien student claim the standard deduction?
+  2 relevant | How do I get an ITIN if I cannot get a Social Security number?
+  2 relevant | Are social security and Medicare taxes withheld from an F-1 student's on-campus pay?
+  2 relevant | Which tax return must a nonresident alien file when engaged in a U.S. trade or business?

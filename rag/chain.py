@@ -12,7 +12,9 @@ CONDENSE_PROMPT = ('Rewrite the follow-up question as one standalone question. U
                    'question. Return only the rewritten question.')
 ANSWER_PROMPT = ('Answer the question using only the numbered context passages. Cite the passages '
                  'you use, for example [1]. If the passages do not contain the answer, say that the '
-                 'documents do not cover it instead of guessing. Answer in the language of the question.')
+                 'documents do not cover it instead of guessing. If passages disagree, say so and '
+                 'prefer the regulation or the most recently updated source when the passages show it. '
+                 'Answer in the language of the question.')
 
 
 def chat_model() -> str:

@@ -29,3 +29,5 @@ data/processed/*
 !data/processed/.gitkeep
 artifacts/*
 !artifacts/.gitkeep
+# The Part 4 knowledge base is shared with A and B through the repository.
+!data/topic/index/index.faiss

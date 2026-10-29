@@ -1,0 +1,1682 @@
+{
+  "method": "OpenAI embedding, cosine similarity",
+  "model": "text-embedding-3-small",
+  "index_chunks_sha256": "3a2a7947525352032f63669b6acb35c30203baf5682d98d1cbe648ac40758cbc",
+  "created_at": "2026-10-29T01:55:53.175786+00:00",
+  "questions": 32,
+  "summary": {
+    "hit@1": 0.6562,
+    "hit@4": 0.9375,
+    "hit@10": 0.9688,
+    "recall@1": 0.3865,
+    "recall@4": 0.7026,
+    "recall@10": 0.8495,
+    "mrr": 0.7899
+  },
+  "per_question": [
+    {
+      "question": "How many credit hours must an undergraduate F-1 student take each term to keep a full course of study?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 0.5,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "7543cf03c8c7e875f2508ebdd0801f41f5fa2e682cfd3c53d70ca40294cb512d",
+          0.7381
+        ],
+        [
+          "2a1f4cdbd7ccb1b81c89fbd511af088e6a4f7a8267b794efd9154b62c56bc6ec",
+          0.7282
+        ],
+        [
+          "1eeaf7867338f5b2e774136bd4561cca8eec2dff38458a78e6fd443b0f85422a",
+          0.7081
+        ],
+        [
+          "e6e7da1ee664d30361d9268ce18060614372e8b780d6767ccffef7bd28e592fd",
+          0.6749
+        ],
+        [
+          "e74a20021e2133bde5ef8d24e351a6e739c121846954246210ec6b9573a02075",
+          0.6553
+        ],
+        [
+          "2d64f7725967cf9d8dceaa1a920e327cdfe65907eaa7ccad1e0e2ffc05fc7977",
+          0.6534
+        ],
+        [
+          "8245658dd1b08b591cb001f024fbb79dfe48513f0329e1cfbb2cabb3796f0887",
+          0.6439
+        ],
+        [
+          "42cf00d475cecb413cf6a2930aac22ad57f89c92a6689d67dc03531fc73853cf",
+          0.6402
+        ],
+        [
+          "6e67caa42dfd95affdbd7776653e0afd2f2ed8341ece7adf3fec1d02d6accdfe",
+          0.6246
+        ],
+        [
+          "2c783eb5c7c446dd5f503d88c0569c650b232f07d44fb2ab2ebef2683451587a",
+          0.6191
+        ]
+      ]
+    },
+    {
+      "question": "How many online or distance-learning classes can count toward an F-1 student's full course of study each term?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "2a1f4cdbd7ccb1b81c89fbd511af088e6a4f7a8267b794efd9154b62c56bc6ec",
+          0.8079
+        ],
+        [
+          "1eeaf7867338f5b2e774136bd4561cca8eec2dff38458a78e6fd443b0f85422a",
+          0.8006
+        ],
+        [
+          "0746f97af1e397990207a74969003a01823f31d542f87c4cd7023027dd3d6e03",
+          0.6621
+        ],
+        [
+          "e6e7da1ee664d30361d9268ce18060614372e8b780d6767ccffef7bd28e592fd",
+          0.6614
+        ],
+        [
+          "42cf00d475cecb413cf6a2930aac22ad57f89c92a6689d67dc03531fc73853cf",
+          0.6614
+        ],
+        [
+          "7543cf03c8c7e875f2508ebdd0801f41f5fa2e682cfd3c53d70ca40294cb512d",
+          0.639
+        ],
+        [
+          "2d64f7725967cf9d8dceaa1a920e327cdfe65907eaa7ccad1e0e2ffc05fc7977",
+          0.6364
+        ],
+        [
+          "6e67caa42dfd95affdbd7776653e0afd2f2ed8341ece7adf3fec1d02d6accdfe",
+          0.6089
+        ],
+        [
+          "8d39020fb8cd651173eec0a90c4ec637c5c60d57da5e2a7475abbc4d8198b876",
+          0.6035
+        ],
+        [
+          "7cc9decf35216dc2385e94561631261950ac4efa0fabcf92aef8d5a342885134",
+          0.599
+        ]
+      ]
+    },
+    {
+      "question": "How early can a new F-1 student enter the United States before the program start date?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.25,
+      "recall@4": 0.25,
+      "recall@10": 0.5,
+      "top": [
+        [
+          "784c300f17f9d9906d7bbc6cb7b05e5fed95d8e8e8536479a55bc15f06942c3c",
+          0.6345
+        ],
+        [
+          "88f035cbc20381fb89bb77c1352b98e9fa288bfa638c3c69eb44d44ebc137e15",
+          0.6295
+        ],
+        [
+          "90162387d8e84438e02fe590e0d596b16739ef8b76edd4d833c435ff565e9485",
+          0.6055
+        ],
+        [
+          "02540f61581f8af3966e5f9ef28ef299caacaa8a489512c4024bbfc024b2683d",
+          0.6037
+        ],
+        [
+          "681bd601b6e509a94e0983faddffa1592ff15244ebdc83aca4fb9de0965cb864",
+          0.598
+        ],
+        [
+          "d414d8a6ae909ac323430240f788545e3b42d8ff21cdbcc1d2ac79f909e65f8a",
+          0.596
+        ],
+        [
+          "15db55b504cf1805ff6279aeac80fb3bb2bab4d51106cd7cea2214cb808a010c",
+          0.596
+        ],
+        [
+          "2122581dfeac2d652bbf16cc487eb5ec09c6535392927575c362c53af19a9f4d",
+          0.592
+        ],
+        [
+          "7b41baf3f4a40899ef6a917f988fa74d5eca29258de12f5a13703f97eeadd108",
+          0.5865
+        ],
+        [
+          "238dd2f3f764e5d00383afc5a6838578b3340fe8211781fe80f032325d32112f",
+          0.5827
+        ]
+      ]
+    },
+    {
+      "question": "Under the current regulation, what is the maximum period of admission for an F-1 student?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "02540f61581f8af3966e5f9ef28ef299caacaa8a489512c4024bbfc024b2683d",
+          0.7433
+        ],
+        [
+          "8245658dd1b08b591cb001f024fbb79dfe48513f0329e1cfbb2cabb3796f0887",
+          0.7398
+        ],
+        [
+          "58f683041fe8322690b013685e136785c307b6551a82c57e7490f834d5dec6f9",
+          0.7029
+        ],
+        [
+          "dc5e896a0e1dbefe4d6f1c1ebb95b24d0e013eba121101defe7cdce6b2ee5105",
+          0.6735
+        ],
+        [
+          "b6428e6aa734707672f69dfe6f2ff5641072894262fbf9bd761fd61c326bcfdc",
+          0.6643
+        ],
+        [
+          "db0e567098eff1e4394ad472dee510f9a9bc3663430822928bcce26e97b12740",
+          0.6626
+        ],
+        [
+          "b6b8993865f5f679ee79884735864215615e7a72e7beeec220a9ee7db05693ed",
+          0.6592
+        ],
+        [
+          "1098ebbc0d5b9ea0ce342e925bc7498f85e20238cc4da0ec21c7fa334014467f",
+          0.6546
+        ],
+        [
+          "862b0e8da4c4b212bbab0fa10ec9085fad816eaa3915e09ca3d815e242540c14",
+          0.6513
+        ],
+        [
+          "f879333f05f3cec1a37d4736e1252fc257326ff769a1c79c8ae056a6a2505f05",
+          0.6345
+        ]
+      ]
+    },
+    {
+      "question": "How many days does an F-1 student have to leave the United States after finishing the program and any practical training?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "e9ba6229c70c0311248817d2b0c032665d3b7b0f82bcd69244be8860d3a9a6df",
+          0.7191
+        ],
+        [
+          "dc5e896a0e1dbefe4d6f1c1ebb95b24d0e013eba121101defe7cdce6b2ee5105",
+          0.7158
+        ],
+        [
+          "db0e567098eff1e4394ad472dee510f9a9bc3663430822928bcce26e97b12740",
+          0.6814
+        ],
+        [
+          "02540f61581f8af3966e5f9ef28ef299caacaa8a489512c4024bbfc024b2683d",
+          0.6574
+        ],
+        [
+          "f879333f05f3cec1a37d4736e1252fc257326ff769a1c79c8ae056a6a2505f05",
+          0.6464
+        ],
+        [
+          "8245658dd1b08b591cb001f024fbb79dfe48513f0329e1cfbb2cabb3796f0887",
+          0.6444
+        ],
+        [
+          "cb57227ed4851f828a8b7c834bb46c94939769fd3d41ccbc186fe5ed78e39883",
+          0.6443
+        ],
+        [
+          "0ae33b93fa6350bbecf4e0b289539e654a7ce45b0757aa490c076dc32232fb3b",
+          0.6438
+        ],
+        [
+          "20ef7bd8d954fc0aaa1d40e42295233dc5076998b58c2899cab70fcae887b2a1",
+          0.6402
+        ],
+        [
+          "220ee685eca265b2a7a20efea7c25b3e63ae4860e438f83b25f3dc952ad9dbb9",
+          0.6369
+        ]
+      ]
+    },
+    {
+      "question": "Within how many days must an F-1 student report a change of address?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "bd857c5ba2b3688614148b77a3df22ea9a6ec77722b32a0e78b5494ac9b60ed3",
+          0.6373
+        ],
+        [
+          "a5582026c9ac896d1ec16b66c793ad4bc2e2abcaf0cef97303136f2309d14057",
+          0.6113
+        ],
+        [
+          "a23c7fc5172932f7bc9c8d23384b13f2ce5c509390e78618b33d4c51f270ba27",
+          0.6025
+        ],
+        [
+          "b8f3146341333945d581665210f9787a5d66d077502bf9c66865e2b146821e4f",
+          0.5736
+        ],
+        [
+          "52cb79eb75651e4e5614fc041bed948ffc79997b8db88913b7165dd5d5cf2375",
+          0.5687
+        ],
+        [
+          "db0e567098eff1e4394ad472dee510f9a9bc3663430822928bcce26e97b12740",
+          0.5577
+        ],
+        [
+          "f879333f05f3cec1a37d4736e1252fc257326ff769a1c79c8ae056a6a2505f05",
+          0.5556
+        ],
+        [
+          "330704e0af220f03685e81bf8da51747f97929f9458a3553196e945d2107d329",
+          0.5551
+        ],
+        [
+          "7fe7e4e9c8165a95c1117cc6019c86e2484632ba47f3775e07dbe0061f1bbc4f",
+          0.5499
+        ],
+        [
+          "02540f61581f8af3966e5f9ef28ef299caacaa8a489512c4024bbfc024b2683d",
+          0.5494
+        ]
+      ]
+    },
+    {
+      "question": "After transferring, how soon must an F-1 student contact the DSO at the new school?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "36e0628e70d4b98ed80f6f1342e699903a1619a2738dee85b0f35214dd8432ff",
+          0.7045
+        ],
+        [
+          "b89c67670a3542cf5b7e8680202ec02757e1a1be328c5669e43f85dfab5ebde5",
+          0.6763
+        ],
+        [
+          "80321be2562c6c6065eafa4d4f583b07e3ee23bdb91bbc8bb6667ff361e0cad5",
+          0.6688
+        ],
+        [
+          "2cbcf8c0607b108cf19276f7ae848ca097e2d89637fe02bbba7d1a4f9e4ceef6",
+          0.6451
+        ],
+        [
+          "3bf7b914fa3cc446a062b09dfd472bf75514e4084d1660a6da8cfd8459b8bb8d",
+          0.641
+        ],
+        [
+          "441304d8caf1324f728690017324f7bf10964bda11ecdb5e31558ff3eb68743b",
+          0.6371
+        ],
+        [
+          "0cea5470c2e0d673b19f508fb187828e43afe0ef13960d5af90f81f91ac416c2",
+          0.6356
+        ],
+        [
+          "bd857c5ba2b3688614148b77a3df22ea9a6ec77722b32a0e78b5494ac9b60ed3",
+          0.6133
+        ],
+        [
+          "f18c472d8c843f9224b64f2745b756c30dbefb8d6f9a0e3114e0c8d66922b722",
+          0.6118
+        ],
+        [
+          "a5582026c9ac896d1ec16b66c793ad4bc2e2abcaf0cef97303136f2309d14057",
+          0.6059
+        ]
+      ]
+    },
+    {
+      "question": "If an F-1 student is outside the United States for up to five months, can they be readmitted to continue studying?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "c9a4a9ef19bdb37e4ea07f98ab40175af917ad14a10340b0d682e6502e13028b",
+          0.7031
+        ],
+        [
+          "02540f61581f8af3966e5f9ef28ef299caacaa8a489512c4024bbfc024b2683d",
+          0.6933
+        ],
+        [
+          "8245658dd1b08b591cb001f024fbb79dfe48513f0329e1cfbb2cabb3796f0887",
+          0.6732
+        ],
+        [
+          "f879333f05f3cec1a37d4736e1252fc257326ff769a1c79c8ae056a6a2505f05",
+          0.6512
+        ],
+        [
+          "504b38c30cb761772e9829fb8e564777d87676a269daaec21766214a20c197ff",
+          0.6445
+        ],
+        [
+          "51dbd9593eabb5bf0458848e224a96896ed67e00fcf5224ec41f89c10e87f175",
+          0.6424
+        ],
+        [
+          "dc5e896a0e1dbefe4d6f1c1ebb95b24d0e013eba121101defe7cdce6b2ee5105",
+          0.6384
+        ],
+        [
+          "84d779f057f68b0073b19f3c5624c774d5eb058a5fc7ce7e7282d7d2d8650ef5",
+          0.6322
+        ],
+        [
+          "edbb289fc0c6c7ad93fe48f450da079afacebc7297a0edee78a04cb4f5ffc1fb",
+          0.6297
+        ],
+        [
+          "15db55b504cf1805ff6279aeac80fb3bb2bab4d51106cd7cea2214cb808a010c",
+          0.6162
+        ]
+      ]
+    },
+    {
+      "question": "Can the F-2 spouse of an F-1 student work in the United States?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "0d6c2abcc7470a647118ac6af318276ec8705486183b15b4a2ce015c30544f04",
+          0.7601
+        ],
+        [
+          "96015cea7cea333ac6f71cf388bf89f354b9e580996d06dbb604f266069e77ba",
+          0.7204
+        ],
+        [
+          "6a19a77bc7d3ceb40101c56307ed07435e819020ab6132598812a483b0873a12",
+          0.7057
+        ],
+        [
+          "1777510480fe22a950eac05480b77f3778b7c1c609d6f133940565aea49ca26d",
+          0.7022
+        ],
+        [
+          "862b0e8da4c4b212bbab0fa10ec9085fad816eaa3915e09ca3d815e242540c14",
+          0.6706
+        ],
+        [
+          "20ef7bd8d954fc0aaa1d40e42295233dc5076998b58c2899cab70fcae887b2a1",
+          0.6666
+        ],
+        [
+          "d85de09672a5b672b59b67eeb01df6be7e245b871bfd8f557534f3374b4f03db",
+          0.6621
+        ],
+        [
+          "1106c792dc63dd00f9cdfe57e423800f9baa838044c3e768e743e4242c691d03",
+          0.6382
+        ],
+        [
+          "a838833c32bd4dc3e521b1fef4ff596f10c2579969fbef147714fdf7c450524c",
+          0.6289
+        ],
+        [
+          "659aac57eb05075a7757d36c73e6ea8cddd7df85a98798ea1742133925696a53",
+          0.617
+        ]
+      ]
+    },
+    {
+      "question": "Do I need to pay the I-901 SEVIS fee again to reenter the United States after travel?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "893467ad2ab480a42f985b487cf7544ab83bc40a0bb2faa61f77ef82bd0bb420",
+          0.7628
+        ],
+        [
+          "3da38946dbc5cc30b094119b6b464cf7f4190ba6977aa827e8d3fc6a055dea46",
+          0.6936
+        ],
+        [
+          "210fe3eab75d990b24c30020212d93fe7bbaf12b986dfaab0f9d31548020c618",
+          0.5972
+        ],
+        [
+          "34f34675ac7517b93f7f2331501e059b7fb939ac64a307bfb78ae9920b7c9daf",
+          0.5961
+        ],
+        [
+          "cd72c600a7b89a2e292902c96301e929c6177e0b22c5cb299bf91f6a2100b400",
+          0.5772
+        ],
+        [
+          "07fe7c8ab20c3a119392dd8d0342dae51c6cf96ba398cf3b16b21ce1e04b5f63",
+          0.5744
+        ],
+        [
+          "1d71c0c1d1a3b1758c3dbf63b462e94f3c7b170f4a120002ec9f47703d4068d1",
+          0.5564
+        ],
+        [
+          "c9a4a9ef19bdb37e4ea07f98ab40175af917ad14a10340b0d682e6502e13028b",
+          0.5512
+        ],
+        [
+          "ce931face130db29ab0f6bc0e1df617485d040f2d80f455270c3646d30a48fe9",
+          0.5289
+        ],
+        [
+          "00b003c388a8874fde94cca98ddbdeab642109fae670ae40f90207141cca3e6b",
+          0.4914
+        ]
+      ]
+    },
+    {
+      "question": "How many hours per week can an F-1 student work on campus while school is in session?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 0.5,
+      "recall@10": 0.5,
+      "top": [
+        [
+          "8336d3f52b048c4b5634bd80363e15ef62f225d21e3853da2df16d9421d98dc0",
+          0.7544
+        ],
+        [
+          "d721818b4a274d1af3ee008d85eec1a6ec5592715d6c515825e62738dd16e5cd",
+          0.6788
+        ],
+        [
+          "2122581dfeac2d652bbf16cc487eb5ec09c6535392927575c362c53af19a9f4d",
+          0.6532
+        ],
+        [
+          "e6e7da1ee664d30361d9268ce18060614372e8b780d6767ccffef7bd28e592fd",
+          0.6418
+        ],
+        [
+          "42cf00d475cecb413cf6a2930aac22ad57f89c92a6689d67dc03531fc73853cf",
+          0.6362
+        ],
+        [
+          "6e67caa42dfd95affdbd7776653e0afd2f2ed8341ece7adf3fec1d02d6accdfe",
+          0.6319
+        ],
+        [
+          "20c00e17ccf16d64dd152537806821ba3ea4352e75852672feca38dfc179757f",
+          0.6211
+        ],
+        [
+          "0ab0f0fdca8ced54c4102efc328b90e4b61d9d425d8c5a70060a29bd11ddec5d",
+          0.621
+        ],
+        [
+          "a3a34c03ee926bd227382d8b219e267c89c9a8712a655dccfe92e8deab67089e",
+          0.6174
+        ],
+        [
+          "20ef7bd8d954fc0aaa1d40e42295233dc5076998b58c2899cab70fcae887b2a1",
+          0.6092
+        ]
+      ]
+    },
+    {
+      "question": "Can an F-1 student work on campus full-time during school breaks?",
+      "first_relevant_rank": 9,
+      "hit@1": false,
+      "hit@4": false,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "8336d3f52b048c4b5634bd80363e15ef62f225d21e3853da2df16d9421d98dc0",
+          0.6982
+        ],
+        [
+          "d721818b4a274d1af3ee008d85eec1a6ec5592715d6c515825e62738dd16e5cd",
+          0.6951
+        ],
+        [
+          "2122581dfeac2d652bbf16cc487eb5ec09c6535392927575c362c53af19a9f4d",
+          0.6604
+        ],
+        [
+          "16ab8dc6206ff5d81e772f788b47a82f0a854be4db3e514f7d4c4ce4c88529dd",
+          0.6521
+        ],
+        [
+          "20c00e17ccf16d64dd152537806821ba3ea4352e75852672feca38dfc179757f",
+          0.6465
+        ],
+        [
+          "7cc9decf35216dc2385e94561631261950ac4efa0fabcf92aef8d5a342885134",
+          0.6457
+        ],
+        [
+          "a3a34c03ee926bd227382d8b219e267c89c9a8712a655dccfe92e8deab67089e",
+          0.6383
+        ],
+        [
+          "0ab0f0fdca8ced54c4102efc328b90e4b61d9d425d8c5a70060a29bd11ddec5d",
+          0.6355
+        ],
+        [
+          "73a6e24ffda638577d0c521be6827ef646d6c57b9e81d0c9d3078391185f34ab",
+          0.6274
+        ],
+        [
+          "797cbddfd9dde2670c9214fe0b5003be959c2c8854860ab0f7b36fef72951b29",
+          0.6227
+        ]
+      ]
+    },
+    {
+      "question": "What is curricular practical training (CPT)?",
+      "first_relevant_rank": 3,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "3e0c8a018a609429c683e6b76bebc2fcddc165546b665e0c9ea3a8073c316d58",
+          0.8617
+        ],
+        [
+          "3a2fe941972033800a897cc7f5f48d4dbff91170be8fc0e297bbafbe1db4530e",
+          0.8195
+        ],
+        [
+          "ac58186b31247cffda9b7a181b018c698f37182b9b81b52e722d5472068c42b1",
+          0.8168
+        ],
+        [
+          "980ddf70105800ba47dbc6e18b437125b156cb1767baee2e980b4b718b78ae40",
+          0.7144
+        ],
+        [
+          "44b71c247a740f60135c588133b7add5667818750cbbeb78f655d262cbbf5b09",
+          0.6889
+        ],
+        [
+          "52379937786075027b653cf2ac8e6e38636def5a03671e2ec089005bc493d5b7",
+          0.6609
+        ],
+        [
+          "bbd9ebb1fce8f5d7dd1c700753d84275ff1b771f06ac907b8978152cbffb8f9a",
+          0.6402
+        ],
+        [
+          "de441c1cfa57381eb7ac1848180d5bc022dd8abc87b5a81efd0da7ce0d1980ba",
+          0.6191
+        ],
+        [
+          "846a22a48f9c498b062bb3637c83b97297e1f9963c1704b84bea8602d19ab1a3",
+          0.6066
+        ],
+        [
+          "47a585c6cf7d309c9a4772149c2efcee13ccde40cb2a5e5364c5d91f280487e3",
+          0.6038
+        ]
+      ]
+    },
+    {
+      "question": "Does a year of full-time CPT affect eligibility for post-completion OPT?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 0.5,
+      "recall@10": 0.5,
+      "top": [
+        [
+          "846a22a48f9c498b062bb3637c83b97297e1f9963c1704b84bea8602d19ab1a3",
+          0.7338
+        ],
+        [
+          "7b9e23e20789d33cb98e41a31de01894902fc947e6fd15dc636ea75fec7f5295",
+          0.695
+        ],
+        [
+          "04dc0b1787490834d2f32bb13885f29fec40c625a6adaa181106433d3c726b8a",
+          0.6662
+        ],
+        [
+          "eae6f5ef8cac1fe436819343317444b0bc5e3f9f2fcc94c637635b00d815f3cc",
+          0.6449
+        ],
+        [
+          "f70ae749b7b66d5e90111c13d2c9fc8cba0584f5a46389bd76ae46638fa9e958",
+          0.6285
+        ],
+        [
+          "9020ab913666ce41e381c18a9bfde3c31f21c568c8f5c654e5e7aa2bb399a1ac",
+          0.6285
+        ],
+        [
+          "2505535606d104dae6b466e4a0b4b8e7b0dae646ffcf227a184ed0fd50587924",
+          0.6272
+        ],
+        [
+          "52379937786075027b653cf2ac8e6e38636def5a03671e2ec089005bc493d5b7",
+          0.6267
+        ],
+        [
+          "8fdfea2e69a1e363b182aed880c5416d91d6225eef90f2e8bd4b3be0221ca04f",
+          0.6252
+        ],
+        [
+          "fb2f79a7b65a70ee669d7f797416a34e9e33c39d6b42a2d44d76239dc491b9da",
+          0.6164
+        ]
+      ]
+    },
+    {
+      "question": "How many months of OPT can a student get at each degree level?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.3333333333333333,
+      "recall@4": 0.6666666666666666,
+      "recall@10": 0.6666666666666666,
+      "top": [
+        [
+          "3f93da6f15caa7576ec8715f09010c6a6bd23e9230fea7d516be1c7f8d464e64",
+          0.7743
+        ],
+        [
+          "eae6f5ef8cac1fe436819343317444b0bc5e3f9f2fcc94c637635b00d815f3cc",
+          0.7288
+        ],
+        [
+          "b6427ae4bc1e8583a91b84c8c6787c13837e42e0f16c56050c930255debedb5b",
+          0.7129
+        ],
+        [
+          "4cdc6bd39b75b5080884b63d1a2f6256c76ac93a9816c622e986be8d46eb01bb",
+          0.6923
+        ],
+        [
+          "9ea8bced6b00c30703cae8d0ea38e21c63a8eec6df726efd44a1735ca2b8d3cd",
+          0.6895
+        ],
+        [
+          "fe8edd4f09727629773da02a1769548685d495851bdcc5533f137055380ad349",
+          0.6879
+        ],
+        [
+          "5a4334ce1f0cd32c6d73e2ad31387b7c982b58d37f0b8a39f202987fbc17a047",
+          0.6841
+        ],
+        [
+          "cbb3e7b2be8f58fe3d0c9b93fd020dcc8ade41e3dac1302701dc45ccce45231e",
+          0.6794
+        ],
+        [
+          "fef7cfcf2e2a026c3e684a31e806e8684e189cc2486191b351f8943310ac6400",
+          0.6764
+        ],
+        [
+          "f70ae749b7b66d5e90111c13d2c9fc8cba0584f5a46389bd76ae46638fa9e958",
+          0.6726
+        ]
+      ]
+    },
+    {
+      "question": "What is the earliest and latest time to file for post-completion OPT?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 0.25,
+      "recall@10": 0.75,
+      "top": [
+        [
+          "9020ab913666ce41e381c18a9bfde3c31f21c568c8f5c654e5e7aa2bb399a1ac",
+          0.7146
+        ],
+        [
+          "9cdf1cecbe6bbfc15395f824cabb8de4cdbc2c4155caf6284414ff68e395f6f2",
+          0.6797
+        ],
+        [
+          "fb2f79a7b65a70ee669d7f797416a34e9e33c39d6b42a2d44d76239dc491b9da",
+          0.6773
+        ],
+        [
+          "4030fa5b811ad632896b93c772afa42f40e7aa5491820f8c67df472386309e3d",
+          0.6747
+        ],
+        [
+          "a3df454c49439e2b9442fddfbfe1641e449e8e4c14f89a34f7f11ea728babb8e",
+          0.6694
+        ],
+        [
+          "88d91bba29659e65d4ac3341911ecd320bae0519bd1f6aa5aff28bb6bf533ad4",
+          0.6638
+        ],
+        [
+          "64f044d930734c331b9590e512d5d7597e43db33c39716cb248777f28811b16f",
+          0.6632
+        ],
+        [
+          "f6ce442fe370e2aaf26d889d57302bc27721bce302df30043c4983d515b9e6c9",
+          0.6576
+        ],
+        [
+          "6715e694ce2f246bfef3d331d39318de925bdf051e40af0b90f25e28f30ed580",
+          0.6571
+        ],
+        [
+          "a7044904e8da32bcf53e659ccb2f4385095af9af5de1320b033044080a092fe9",
+          0.6532
+        ]
+      ]
+    },
+    {
+      "question": "How many days of unemployment are allowed during post-completion OPT?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "eae6f5ef8cac1fe436819343317444b0bc5e3f9f2fcc94c637635b00d815f3cc",
+          0.8382
+        ],
+        [
+          "f70ae749b7b66d5e90111c13d2c9fc8cba0584f5a46389bd76ae46638fa9e958",
+          0.7652
+        ],
+        [
+          "4030fa5b811ad632896b93c772afa42f40e7aa5491820f8c67df472386309e3d",
+          0.702
+        ],
+        [
+          "88d91bba29659e65d4ac3341911ecd320bae0519bd1f6aa5aff28bb6bf533ad4",
+          0.6426
+        ],
+        [
+          "9cdf1cecbe6bbfc15395f824cabb8de4cdbc2c4155caf6284414ff68e395f6f2",
+          0.6401
+        ],
+        [
+          "7b9e23e20789d33cb98e41a31de01894902fc947e6fd15dc636ea75fec7f5295",
+          0.6344
+        ],
+        [
+          "d677f247a5856a5ce1bf8ec41da4d70ace6e59bccff1092f4586af486639e0f1",
+          0.6312
+        ],
+        [
+          "9020ab913666ce41e381c18a9bfde3c31f21c568c8f5c654e5e7aa2bb399a1ac",
+          0.6294
+        ],
+        [
+          "a3df454c49439e2b9442fddfbfe1641e449e8e4c14f89a34f7f11ea728babb8e",
+          0.625
+        ],
+        [
+          "2505535606d104dae6b466e4a0b4b8e7b0dae646ffcf227a184ed0fd50587924",
+          0.6236
+        ]
+      ]
+    },
+    {
+      "question": "How many total days of unemployment are allowed for a student with a STEM OPT extension?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 0.5,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "eae6f5ef8cac1fe436819343317444b0bc5e3f9f2fcc94c637635b00d815f3cc",
+          0.7477
+        ],
+        [
+          "fe8edd4f09727629773da02a1769548685d495851bdcc5533f137055380ad349",
+          0.7034
+        ],
+        [
+          "5a18cce744adee573e748d6f8a71b6e075a4e33f97a3d8968e12189975007c3e",
+          0.7001
+        ],
+        [
+          "a3ada28db0587107357db97730d204c27ee3dbe8e00700e2e927ddee64d7f64a",
+          0.6898
+        ],
+        [
+          "bf87b8fecebf8ec8d16966d39f47fe254461fd14fbf4cfdbbf79f1eb149d1953",
+          0.6871
+        ],
+        [
+          "9ea8bced6b00c30703cae8d0ea38e21c63a8eec6df726efd44a1735ca2b8d3cd",
+          0.6815
+        ],
+        [
+          "8122395fdd908877fd2537c2b18b3f67658fdce85a7714f1298f3bedf9fd931f",
+          0.6798
+        ],
+        [
+          "5d319dc40c5e09458a60aad2f818ff168911ce5709e7593b6bebd7a71a4d486e",
+          0.6772
+        ],
+        [
+          "f70ae749b7b66d5e90111c13d2c9fc8cba0584f5a46389bd76ae46638fa9e958",
+          0.6743
+        ],
+        [
+          "f6ed2b79055da181af103f0222f99a5d6cfd2c3fc76325bb6911fca25183d0a2",
+          0.6651
+        ]
+      ]
+    },
+    {
+      "question": "How long is the STEM OPT extension?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "bf87b8fecebf8ec8d16966d39f47fe254461fd14fbf4cfdbbf79f1eb149d1953",
+          0.7861
+        ],
+        [
+          "5d319dc40c5e09458a60aad2f818ff168911ce5709e7593b6bebd7a71a4d486e",
+          0.7816
+        ],
+        [
+          "5a18cce744adee573e748d6f8a71b6e075a4e33f97a3d8968e12189975007c3e",
+          0.7698
+        ],
+        [
+          "b8e3dade5507a25120215515ee56ec6739b7e1851723d5c3e32334d519793e12",
+          0.7634
+        ],
+        [
+          "9ea8bced6b00c30703cae8d0ea38e21c63a8eec6df726efd44a1735ca2b8d3cd",
+          0.7558
+        ],
+        [
+          "a3ada28db0587107357db97730d204c27ee3dbe8e00700e2e927ddee64d7f64a",
+          0.7557
+        ],
+        [
+          "fe8edd4f09727629773da02a1769548685d495851bdcc5533f137055380ad349",
+          0.7398
+        ],
+        [
+          "f6ed2b79055da181af103f0222f99a5d6cfd2c3fc76325bb6911fca25183d0a2",
+          0.7373
+        ],
+        [
+          "8b80a6f7b60a6b90dc634f56a7cc9ec7aee8ba5806c0183e61195ed1c4eed5a2",
+          0.7318
+        ],
+        [
+          "519f2144b72116c44a4c51fcd3da4754019b95b4480882d4a8ab6b2c390cd918",
+          0.7305
+        ]
+      ]
+    },
+    {
+      "question": "What must a STEM OPT employer be enrolled in?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.2,
+      "recall@4": 0.4,
+      "recall@10": 0.6,
+      "top": [
+        [
+          "6297b856324eac6f9554ac931287b18a01583ad293832f447abb9cfcd42f0fc0",
+          0.7496
+        ],
+        [
+          "d0ba53378dedf79db1b7c72b955fddd645f68651e4f05347f57278677c37f07f",
+          0.7214
+        ],
+        [
+          "bf87b8fecebf8ec8d16966d39f47fe254461fd14fbf4cfdbbf79f1eb149d1953",
+          0.716
+        ],
+        [
+          "5d319dc40c5e09458a60aad2f818ff168911ce5709e7593b6bebd7a71a4d486e",
+          0.7142
+        ],
+        [
+          "0f0e8324ed288ac29797f1b06a91709be4e071fae609581b3dc66d3c6b0c1a98",
+          0.6853
+        ],
+        [
+          "31cca7085025eaea47ace8d51dc2fa1000f3b95d1232ae823ade217682fbcb5a",
+          0.6776
+        ],
+        [
+          "c67c32ce331fe84b937fe949329088a6628a503bb0a9f3a830111e0f2825b5a2",
+          0.6742
+        ],
+        [
+          "a67211d7b022f045a9f59ab190e8e81ee47f15d4fe6271e6805d45448f27d9f3",
+          0.67
+        ],
+        [
+          "b3fda16633fe134b2022a7a2f6c2ce0ebd10b600b872f8edf5bd22db7c8df803",
+          0.6671
+        ],
+        [
+          "cbb3e7b2be8f58fe3d0c9b93fd020dcc8ade41e3dac1302701dc45ccce45231e",
+          0.6666
+        ]
+      ]
+    },
+    {
+      "question": "Which form is the training plan for STEM OPT students?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.3333333333333333,
+      "recall@4": 0.3333333333333333,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "0f0e8324ed288ac29797f1b06a91709be4e071fae609581b3dc66d3c6b0c1a98",
+          0.8124
+        ],
+        [
+          "4cda122758cc62b5e4a3fc696f0bfa860fc1736200a31a0e92ee229d382f1a7d",
+          0.7365
+        ],
+        [
+          "890a00c29df8415c81938cf9f2ddfbe5c05ca7787f0d733fdf92c367eeeb0100",
+          0.6907
+        ],
+        [
+          "8122395fdd908877fd2537c2b18b3f67658fdce85a7714f1298f3bedf9fd931f",
+          0.6818
+        ],
+        [
+          "5d319dc40c5e09458a60aad2f818ff168911ce5709e7593b6bebd7a71a4d486e",
+          0.6806
+        ],
+        [
+          "a67211d7b022f045a9f59ab190e8e81ee47f15d4fe6271e6805d45448f27d9f3",
+          0.6739
+        ],
+        [
+          "5b889dbcb42026385620e25edcffe416373cd115ee2a272178efecc4b2c5bab8",
+          0.6697
+        ],
+        [
+          "31cca7085025eaea47ace8d51dc2fa1000f3b95d1232ae823ade217682fbcb5a",
+          0.666
+        ],
+        [
+          "017c55fcbe179fbece25e764ad181654b9968fcb7ab98253da425c3835b90b2e",
+          0.6613
+        ],
+        [
+          "6297b856324eac6f9554ac931287b18a01583ad293832f447abb9cfcd42f0fc0",
+          0.6595
+        ]
+      ]
+    },
+    {
+      "question": "Can I start working on OPT before my EAD arrives?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.25,
+      "recall@4": 0.75,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "e4c063af1ac5cb90886c84e42dda17a39bfdb3ef870a1337e8304324bdd60ffe",
+          0.6852
+        ],
+        [
+          "88d91bba29659e65d4ac3341911ecd320bae0519bd1f6aa5aff28bb6bf533ad4",
+          0.6823
+        ],
+        [
+          "c10b2bf23a85f545673f60f3e32100845aa5e6f103df98c879279fc798637624",
+          0.6732
+        ],
+        [
+          "03ba02819c68ce821d6122b149fb603e426a9d6fa187789f6e0493c40014a005",
+          0.6684
+        ],
+        [
+          "8a882cd4bc0f1d382849a36f5e0d7fabd73374c95299cdd86f43847a3133ad5b",
+          0.6411
+        ],
+        [
+          "ade9baedf21d001f5d2969e650c99b26d1296362752d1af8778d1af206c34fdf",
+          0.613
+        ],
+        [
+          "aefa459548f6f67cf5c5af9877a687a73098922814ae942142629b038079fe3a",
+          0.5861
+        ],
+        [
+          "a3df454c49439e2b9442fddfbfe1641e449e8e4c14f89a34f7f11ea728babb8e",
+          0.5821
+        ],
+        [
+          "6297b856324eac6f9554ac931287b18a01583ad293832f447abb9cfcd42f0fc0",
+          0.5774
+        ],
+        [
+          "96f254fad4fd67b80be96de4bafcdf490bc20b884e95ca13604df4df37e222c9",
+          0.5768
+        ]
+      ]
+    },
+    {
+      "question": "What is the cap-gap extension for F-1 students with an H-1B petition?",
+      "first_relevant_rank": 3,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 0.5,
+      "recall@10": 0.5,
+      "top": [
+        [
+          "102a2e63ba36550adf2abe1d3b5d32830e5a1b002526b6a55bc24575a3a41b18",
+          0.8581
+        ],
+        [
+          "e50cc6f067f8a8f1e5a6409542dd51c4726262dc1a47c223e69e24ef389de23c",
+          0.813
+        ],
+        [
+          "d055eb5d7c6ae319e44456e13c9c1021b3cafbb010f84ae4106aa18c6c3c2efe",
+          0.786
+        ],
+        [
+          "238dd2f3f764e5d00383afc5a6838578b3340fe8211781fe80f032325d32112f",
+          0.7645
+        ],
+        [
+          "edbb289fc0c6c7ad93fe48f450da079afacebc7297a0edee78a04cb4f5ffc1fb",
+          0.762
+        ],
+        [
+          "c77ec0a75fdcde29cd79846e8ddc25800cfcc9b30ff4613c262229e6b0aa46f1",
+          0.7115
+        ],
+        [
+          "b880afaa190fb58a80f5052a58b4a952c4702e67430f340524e4f82e38696fa0",
+          0.7097
+        ],
+        [
+          "918f329b7bcffc56882a2f3280ee2d476e79d3a2104769fe9eb04c52cd5bde19",
+          0.7069
+        ],
+        [
+          "721f364c354d49ed4460a9e87b3071f7441b81019fe1b31f699be76772f9a587",
+          0.6767
+        ],
+        [
+          "84d779f057f68b0073b19f3c5624c774d5eb058a5fc7ce7e7282d7d2d8650ef5",
+          0.6729
+        ]
+      ]
+    },
+    {
+      "question": "How early can an F-1 student apply for an on-campus job before classes start?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "a3a34c03ee926bd227382d8b219e267c89c9a8712a655dccfe92e8deab67089e",
+          0.7247
+        ],
+        [
+          "2122581dfeac2d652bbf16cc487eb5ec09c6535392927575c362c53af19a9f4d",
+          0.6721
+        ],
+        [
+          "8336d3f52b048c4b5634bd80363e15ef62f225d21e3853da2df16d9421d98dc0",
+          0.6247
+        ],
+        [
+          "c0265005450e1b2770b3d8b6332374dc5fbc8f4fefe67394116b694296ce5384",
+          0.6205
+        ],
+        [
+          "d721818b4a274d1af3ee008d85eec1a6ec5592715d6c515825e62738dd16e5cd",
+          0.5947
+        ],
+        [
+          "797cbddfd9dde2670c9214fe0b5003be959c2c8854860ab0f7b36fef72951b29",
+          0.5938
+        ],
+        [
+          "24035d504655a4ed8e745051e6afee4bbd090365f06bd2990900b0fc9db20721",
+          0.5833
+        ],
+        [
+          "d414d8a6ae909ac323430240f788545e3b42d8ff21cdbcc1d2ac79f909e65f8a",
+          0.5795
+        ],
+        [
+          "7fe7e4e9c8165a95c1117cc6019c86e2484632ba47f3775e07dbe0061f1bbc4f",
+          0.5674
+        ],
+        [
+          "674294b5414f6c6e4f8cc35b49126888da5e9a2e7d28b22d08b6757f626bc820",
+          0.5514
+        ]
+      ]
+    },
+    {
+      "question": "Is there a minimum income that requires a foreign student to file a U.S. tax return?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "1562f24df799599ebaf34a04a936ba660cf3552cc6391e1fb0645094cddb91bf",
+          0.7043
+        ],
+        [
+          "3c0badfa9478d08973ca4ade70debb12e8c2ad09cee39ab140d416015fa1856f",
+          0.6314
+        ],
+        [
+          "b520a2743d6b2aa0bc5123abb741e44fe46c82b6d2fc571c39cf2f3afb4b9a4f",
+          0.607
+        ],
+        [
+          "304546e8060405ed849c6345ae61028dd6ada4ffb9c621af598f1e7237c0bc2f",
+          0.5811
+        ],
+        [
+          "4a2a3c70917d5b0e358e1a04cd52db706600fb01a0a97fa74aa31893192dc939",
+          0.575
+        ],
+        [
+          "b4cd374799b60267ca31760809d56af29eb73106a9021741c187b789b45bbdfe",
+          0.5698
+        ],
+        [
+          "4effca689b9569d954872dd2dc8e31bee9ee0d0f7019f9f5ff25423d597890cc",
+          0.5678
+        ],
+        [
+          "288f1d38d2498b83606be6cb0295eefb52815c8aababfd385a99505ca4ec9c1a",
+          0.5669
+        ],
+        [
+          "82727f7f572c3177032eb6ac8e2baecb0a481d261cb965ff8cd194725b573fe4",
+          0.564
+        ],
+        [
+          "241895bfd1fa7c932951e306c3fef67ad7bcb8fa9b780c31da84e78adb403a16",
+          0.5629
+        ]
+      ]
+    },
+    {
+      "question": "For how many years can a student be an exempt individual for the substantial presence test?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 0.3333333333333333,
+      "recall@10": 0.6666666666666666,
+      "top": [
+        [
+          "212d1c4de2ecb2f071884bff34fb5b7dfd886fcd943a94345244cadb177d7489",
+          0.6874
+        ],
+        [
+          "5e3ba1ee850400ee38671716b18c4a7579ca1898b89cb7f799ad01a34e97586f",
+          0.683
+        ],
+        [
+          "aa517d3c2d7583de3b67d34f22415e18158517c0d57af94c0e4bcf3a06904f87",
+          0.6361
+        ],
+        [
+          "3476a5ffa97151d2dc752bb4ec45d02897cd43a2a74a025688cddaa977963273",
+          0.6316
+        ],
+        [
+          "a25822fa52e92ae9e7c50ea122dfe1b1fdc36cf3f2841c20261cdb19230ff29d",
+          0.6296
+        ],
+        [
+          "be997c39c1f688371c190fbf038c0e3da8b448cdd264a81effe452c7b9461980",
+          0.6222
+        ],
+        [
+          "9adbfb55aa525d896489eba274ee207a9dbd76828e30700869128f305d7fd601",
+          0.6091
+        ],
+        [
+          "2adb2683d9066f961c885364353ba124550118bb4a96da845945acfcc88ef46b",
+          0.6048
+        ],
+        [
+          "3f1814228d422f33fdaee92ed1b6fdc84ba13767a448fb76b1aaaef17557a6dc",
+          0.6044
+        ],
+        [
+          "25dbdbe702f6d5f84a26d88bb64a438cc59f230e810f551021d8aa645205a0e4",
+          0.5848
+        ]
+      ]
+    },
+    {
+      "question": "Which form do F-1 students file to explain they are exempt individuals?",
+      "first_relevant_rank": null,
+      "hit@1": false,
+      "hit@4": false,
+      "hit@10": false,
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@10": 0.0,
+      "top": [
+        [
+          "3476a5ffa97151d2dc752bb4ec45d02897cd43a2a74a025688cddaa977963273",
+          0.5972
+        ],
+        [
+          "b520a2743d6b2aa0bc5123abb741e44fe46c82b6d2fc571c39cf2f3afb4b9a4f",
+          0.5764
+        ],
+        [
+          "12dcd55f9ff6a13c7bfcbab5f0d2c9c3420a5c23d87c40ef11b1b56bf6d41a64",
+          0.575
+        ],
+        [
+          "330704e0af220f03685e81bf8da51747f97929f9458a3553196e945d2107d329",
+          0.5724
+        ],
+        [
+          "5e3ba1ee850400ee38671716b18c4a7579ca1898b89cb7f799ad01a34e97586f",
+          0.5718
+        ],
+        [
+          "923e40f21a525c5d5d863629b7646f244fc6f71ae0dfe2fcea4eea73cdddf247",
+          0.5703
+        ],
+        [
+          "b8f3146341333945d581665210f9787a5d66d077502bf9c66865e2b146821e4f",
+          0.5699
+        ],
+        [
+          "659aac57eb05075a7757d36c73e6ea8cddd7df85a98798ea1742133925696a53",
+          0.5672
+        ],
+        [
+          "0ff7de7a007f95c317459c12f5d22f4b90576ce44cc6f5697eadd592e3ff6f69",
+          0.5641
+        ],
+        [
+          "ceeb010710a16974cc47721f3b8a1877e951c069dd479df3f69d01540ad45b3c",
+          0.5628
+        ]
+      ]
+    },
+    {
+      "question": "Where do I mail Form 8843 if I do not have to file a tax return?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "923491f43d24c73911e3c0faff6c31954d7140a9c2ad891a1cae00794f8e9955",
+          0.7255
+        ],
+        [
+          "25491720672f57a6b20a784a9915bc94d73cea0b12b042a6715abe3fc80bc247",
+          0.6635
+        ],
+        [
+          "ef232eaf49bf88cd48458c7bf644a7a4704812593e434e1afaedd05be8ba4d21",
+          0.6338
+        ],
+        [
+          "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+          0.633
+        ],
+        [
+          "33b1ef160e0c88c16952a9338c907b2782808a7c858e4e7c89260890d83e2771",
+          0.61
+        ],
+        [
+          "316a09f903ff35c6d4f254b001888496d5d6e625f4eee02169d287c30008431c",
+          0.6083
+        ],
+        [
+          "34c9082df239b066e343d55d11418aef298ac47dc6915c5e9e4361c63f4be346",
+          0.6072
+        ],
+        [
+          "065a64dee1c570cc1d63b8125748aa1978dc116fd864ff9351f2840dc78d58b1",
+          0.5988
+        ],
+        [
+          "e302ba511fd36ba52a51702a888760db9c91405560c40d226e79428f48aff313",
+          0.5939
+        ],
+        [
+          "0c8a2e44cc5d69d825afcdfabe0d63da4a5ec052862bca8298ea058c53aa0648",
+          0.5794
+        ]
+      ]
+    },
+    {
+      "question": "Can a nonresident alien student claim the standard deduction?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "4b05d59e79dc3e281c2fafda9215343528b5e164a872cea287c13333cc231cfa",
+          0.6955
+        ],
+        [
+          "4e26a242951f6cb97f109e151a1b1b42305e918eb67ebb50d1b27f29b10cdb01",
+          0.6929
+        ],
+        [
+          "22fb038b500bf72ba01b29b3b3b75d842764a340f3a28b4026e0f9ea7177c5b8",
+          0.6715
+        ],
+        [
+          "b9dba0ae90dd9a7f8b19b9ebb589c7fa774a38bc6f64be1d8c0f4b86de7109e5",
+          0.6675
+        ],
+        [
+          "ce391038fd4ee7ec64827fd142f5c55b531a4b3361eebef1c2d9beb398761cfd",
+          0.6641
+        ],
+        [
+          "973cc0e48f4079bae3e2b78968876690cd8ea81e1ce0d9394a2dff1c7ef61932",
+          0.6641
+        ],
+        [
+          "5f8f9397ef9d6994be1d64244380d46f1e95570986563598897c4c7e9aee1bcb",
+          0.6546
+        ],
+        [
+          "151f8bf56e7e17f731bfc8c3b7ae29a13f0b61c2888305eaf6418c98b03ea9c8",
+          0.6392
+        ],
+        [
+          "2a88c36623038b7fe647775842d783d1e631de0ccba799e72be07d7cc239b047",
+          0.6365
+        ],
+        [
+          "91be99c6bde9d5c0bcbbea0fd362f2142864d6064ac60dc3fdf272bc7e6b2921",
+          0.62
+        ]
+      ]
+    },
+    {
+      "question": "How do I get an ITIN if I cannot get a Social Security number?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 0.5,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "2eeeec47ed321d33a6a300cd5056140fd8d1c115a01fdc9150d710b47a1f9c22",
+          0.7418
+        ],
+        [
+          "2c8421c67cd6aec58e4fd6907664f408225b86236cd43711a5d0d588bad4f7de",
+          0.7201
+        ],
+        [
+          "be227746f013bf39d948775d31ad3f3fa6a4fa73bd0ec6b607d0b46f380667d0",
+          0.6856
+        ],
+        [
+          "74b3c049223f92e8d0ea45857416b8605ea9ac7126e46226470c3b50c62c646d",
+          0.685
+        ],
+        [
+          "4e80f39ea2ebdeb7f501741023435d0a66d9d60fdcf670b1fafc88f1a3aac91b",
+          0.6639
+        ],
+        [
+          "a1af9df56dce64ff6231a3032d8ef71330ddd657cecb64f616926081a79c45b2",
+          0.6623
+        ],
+        [
+          "05a97615e781978d1650ecfd1c11a5a22b70a4d8928d7741113126e54909b11c",
+          0.6563
+        ],
+        [
+          "421d94e73c75c87186947e8bcb2be42d83dd06b5bbc661d59c2fce504232be3f",
+          0.6485
+        ],
+        [
+          "c4a95795ee62388d2cade6a5d8b28378dd601117b5bc108a19479f9a8c78c7d2",
+          0.6208
+        ],
+        [
+          "219d8867cb57e9872a17f97bc0f9ba2385ca54cdd0484a40f6f13f87404d9185",
+          0.6205
+        ]
+      ]
+    },
+    {
+      "question": "Are social security and Medicare taxes withheld from an F-1 student's on-campus pay?",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.5,
+      "recall@4": 1.0,
+      "recall@10": 1.0,
+      "top": [
+        [
+          "53443ace5a391c0f95c453cc2a3063d47df5d95d49d839fc6b74739e4c32e2f0",
+          0.6929
+        ],
+        [
+          "612c19f4faacb0b607eb5cc4cfcc8850106b07ba37da13650790fe59fec9aa1a",
+          0.6746
+        ],
+        [
+          "7470bf45fddb5800bcc6cea8f852bb36b5531a63d189877f68ce3d7071d461dd",
+          0.5639
+        ],
+        [
+          "7819332c2e47432b7e7e2e278e837d921dc56a29d4531a72cadeaa873096967f",
+          0.5619
+        ],
+        [
+          "f520bf0b6499f0070081a4d23f532006b68f4691b0727554467f46639c8018bf",
+          0.541
+        ],
+        [
+          "b520a2743d6b2aa0bc5123abb741e44fe46c82b6d2fc571c39cf2f3afb4b9a4f",
+          0.5401
+        ],
+        [
+          "09136c373e03bcbc59bd5d72e229af56d189955071abf9e9de54c72ead1df490",
+          0.5391
+        ],
+        [
+          "20c00e17ccf16d64dd152537806821ba3ea4352e75852672feca38dfc179757f",
+          0.5351
+        ],
+        [
+          "981662ee88643e9039e64289ad26c23e752df91896282e8c3dae8a168eac46bb",
+          0.5311
+        ],
+        [
+          "357c68ff7b63d34a634f730377b1fbb1f22521b74505173a3b6a61d91126e14d",
+          0.5295
+        ]
+      ]
+    },
+    {
+      "question": "Which tax return must a nonresident alien file when engaged in a U.S. trade or business?",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@4": true,
+      "hit@10": true,
+      "recall@1": 0.0,
+      "recall@4": 0.5,
+      "recall@10": 0.5,
+      "top": [
+        [
+          "655083ef1ee06c095be53af5ca5aa911c71dc5a816565932c4679f3aad1eb40e",
+          0.6878
+        ],
+        [
+          "4782311295309e830e29a92b142c70fba6164188e06084ba37e7d35ef947f118",
+          0.6635
+        ],
+        [
+          "53bd8d4725d8294ba0107215636999a188cba3c1da1921e44ec7c932a3e9ade4",
+          0.6583
+        ],
+        [
+          "235df7e47120c5b098cced80f564c5088294d8caaa57dc20704bf0fd54a3f394",
+          0.658
+        ],
+        [
+          "40886c3f22ed8b7b65ffa2f3e4ee59ecbf24da024ce2c3d83b177aa1fee65b4e",
+          0.6573
+        ],
+        [
+          "e1e7ab85bd1e97010c3052016d322df8f0e3024ee06345f2581f7b90b31636e1",
+          0.6549
+        ],
+        [
+          "ec5632e5121f3bb67dd735e282f9b7221bb301faf9316dc0604c3de1ceaf504d",
+          0.6497
+        ],
+        [
+          "a105aa2325dc23910d78c4d06c76c64757cf63ce1391866a1940b9abc298bef2",
+          0.6481
+        ],
+        [
+          "10fe5fc6cc81e78f3cf7671d2c258d964c1af6f56776c0863fb026540f8a6022",
+          0.6468
+        ],
+        [
+          "47c09ca359fbd3310c07d62e2e90f22a0a1722af2b7c4b10fb397eff1196fff9",
+          0.6445
+        ]
+      ]
+    }
+  ]
+}

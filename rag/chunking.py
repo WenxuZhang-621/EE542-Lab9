@@ -62,6 +62,28 @@ def build_chunks(engine, document_ids: list[str]) -> tuple[list[Chunk], dict]:
                     'min_chars': min(lengths), 'max_chars': max(lengths)}
 
 
+def chunk_folder(folder: Path, write=print) -> list[Chunk]:
+    """Store every supported file in the folder in MySQL, then chunk exactly those versions."""
+    from rag.ingest import ingest_folder
+    from rag.storage import init_schema
+    engine = get_engine()
+    try:
+        init_schema(engine)
+        results = ingest_folder(engine, folder)
+        for result in results:
+            detail = result.get('error') or f"{result['pages']} pages"
+            write(f"Stored {result['source']}: {result['status']} ({detail})")
+        ids = [result['document_id'] for result in results if result['status'] != 'failed']
+        if not ids:
+            raise ValueError('No file in the folder was stored.')
+        chunks, manifest = build_chunks(engine, ids)
+    finally:
+        engine.dispose()
+    write(f"Chunked {len(ids)} documents: {manifest['chunk_count']} chunks, "
+          f"{manifest['min_chars']}-{manifest['max_chars']} characters")
+    return chunks
+
+
 def write_once_or_verify(path: Path, content: str) -> str:
     path.parent.mkdir(parents=True, exist_ok=True)
     try:

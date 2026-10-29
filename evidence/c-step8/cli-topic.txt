@@ -1,0 +1,97 @@
+2026-10-28 19:01:46 PDT
+$ python -m rag.cli --index data/topic/index  (questions piped from stdin)
+Index loaded: 1694 chunks, text-embedding-3-small (1536 dims)
+Note: General information from official U.S. government sources; not legal or tax advice.
+Chat model: gpt-6-luna, top-k: 4
+Type a question, or 'exit' to quit.
+
+Question: How many days of unemployment are allowed on post-completion OPT?
+
+Answer: A student may accrue no more than **90 days of unemployment** during post-completion OPT. [2]
+
+Retrieved context:
+  [1] score 0.840 · cfr-8-214-2-f.txt · eae6f5ef8cac
+      more than 150 days of unemployment during a total OPT period, including any post-completion OPT period described in 8 CFR 274a.12(c)(3)(i)(B) and any subsequen…
+  [2] score 0.764 · cfr-8-214-2-f.txt · f70ae749b7b6
+      (E) Periods of unemployment during post-completion OPT. During post-completion OPT, F-1 status is dependent upon employment. Students may not accrue an aggrega…
+  [3] score 0.710 · cfr-8-214-2-f.txt · 4030fa5b811a
+      ion begins on the day after the expiration of the initial post-completion OPT employment authorization and ends 24 months thereafter, regardless of the date th…
+  [4] score 0.648 · uscis-opt-f1.html · 88d91bba2965
+      - May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree. You may not begin your pre- or post-comple…
+
+Question: And with the STEM extension?
+Standalone question: How many days of unemployment are allowed during the STEM OPT extension?
+
+Answer: You may accrue up to **150 days of unemployment across your total OPT period**, including the STEM OPT extension—not 150 days just during the extension. [1]
+
+Retrieved context:
+  [1] score 0.748 · cfr-8-214-2-f.txt · eae6f5ef8cac
+      more than 150 days of unemployment during a total OPT period, including any post-completion OPT period described in 8 CFR 274a.12(c)(3)(i)(B) and any subsequen…
+  [2] score 0.714 · sits-applying-for-practical-training.html · a3ada28db058
+      employment authorization is automatically extended for 180 days. This automatic 180-day extension ends once USCIS adjudicates your STEM OPT extension applicati…
+  [3] score 0.709 · uscis-opt-f1.html · 5a18cce744ad
+      If you file your STEM OPT extension application on time and your OPT period expires while your extension application is pending, we will automatically extend y…
+  [4] score 0.693 · uscis-opt-f1.html · bf87b8fecebf
+      STEM OPT Extension If you have earned a degree in certain Science, Technology, Engineering and Mathematics (STEM) fields, you may apply for a 24-month extensio…
+
+Question: How long can I stay in the U.S. after I finish my program?
+Standalone question: How long can an F-1 student stay in the U.S. after finishing their program?
+
+Answer: Under the regulation, an F-1 student generally has **30 days** after completing their program and any authorized practical training to prepare to leave the U.S. or seek to maintain lawful status [2]. The materials also include a source stating 60 days [3], but it conflicts with the regulation.
+
+Retrieved context:
+  [1] score 0.738 · cfr-8-214-2-f.txt · 8245658dd1b0
+      (5) Period of stay—(i) General. An F-1 student is admitted for a fixed period of time, which is the period necessary to complete the course of study indicated …
+  [2] score 0.729 · cfr-8-214-2-f.txt · dc5e896a0e1d
+      (v) Period of preparation for departure or to otherwise maintain lawful status in the United States. An F-1 student who has completed a course of study and any…
+  [3] score 0.717 · sits-maintaining-status.html · e9ba6229c70c
+      Once you complete your program of study and any authorized period of practical training, F students have 60 days after completion of your program (the program …
+  [4] score 0.714 · cfr-8-214-2-f.txt · db0e567098ef
+      (vi) Period of stay. If an application for extension is granted, the F-1 student and the student's F-2 spouse and children, if applicable, are to be given an e…
+
+Question: Do I need to file Form 8843 if I had no income?
+Standalone question: As an F-1 student, do I need to file Form 8843 if I had no income?
+
+Answer: The documents don’t say whether an F-1 student with no income must file Form 8843. They discuss some Form 8843 filing situations, but don’t give a general rule for this case. [3][4]
+
+Retrieved context:
+  [1] score 0.621 · irs-foreign-students.html · 3c0badfa9478
+      Filing IS required by nonresident alien students and scholars who have: - A taxable scholarship or fellowship grant, as described in Chapter 1 of Publication 9…
+  [2] score 0.616 · irs-p519.txt p.67 · acdd86f96712
+      them on line 1 of your Social Security Benefits Worksheet in the Instructions for Form 1040 for purposes of determining the taxable amount to be reported on Fo…
+  [3] score 0.601 · irs-f8843.txt p.3 · 33b1ef160e0c
+      substantial presence test. For more details, see Pub. 519. If you are present under any other “A” or “G” class visa, you are not required to file Form 8843. Sp…
+  [4] score 0.594 · irs-p519.txt p.8 · 25491720672f
+      Department of the Treasury Internal Revenue Service Center Austin, TX 73301-0215 You must file Form 8843 by the due date for filing Form 1040-NR. The due date …
+
+Question: 我是 F-1 学生，在校内打工每周最多能工作多少小时？
+Standalone question: 作为 F-1 学生，我在校内每周最多可以工作多少小时？
+
+Answer: 学期上课期间，F-1 学生在校内每周最多可以工作 20 小时。[1]
+
+Retrieved context:
+  [1] score 0.657 · sits-working-in-the-us.html · 8336d3f52b04
+      If you participate in on-campus employment, you may not work more than 20 hours per week when school is in session. If you have additional questions, please vi…
+  [2] score 0.600 · sits-full-course-of-study.html · 42cf00d475ce
+      - F-1 students in other post-secondary liberal arts, fine arts or other non-vocational or English language learning training programs must meet 18 clock hours …
+  [3] score 0.573 · cfr-8-214-2-f.txt · d721818b4a27
+      (ii) Off-campus work authorization—(A) General. An F-1 student may be authorized to work off-campus on a part-time basis in accordance with paragraph (f)(9)(ii…
+  [4] score 0.563 · sits-full-course-of-study.html · 6e67caa42dfd
+      If you are an F-1 or M-1 student at a K-12 school and do not know how many hours per week fulfill your school’s requirement for normal progress toward graduati…
+
+Question: What is the best pizza place in Los Angeles?
+
+Answer: The documents do not cover which pizza place is best in Los Angeles.
+
+Retrieved context:
+  [1] score 0.143 · irs-p519.txt p.17 · 0e1f71690dad
+      where you spend most of your working time. This could be your office, plant, store, shop, or other location. If there is no one place where you spend most of y…
+  [2] score 0.135 · irs-p519.txt p.74 · 96e8c970bf1e
+      taxpayer IRS OLA. For more information, go to IRS.gov/ TaxProAccount. Using direct deposit. The safest and easiest way to receive a tax refund is to e-file and…
+  [3] score 0.129 · irs-p519.txt p.4 · 7f4975414537
+      pages that would otherwise be blank. You can help bring these children home by looking at the photographs and calling 1-800-THE-LOST (1-800-843-5678) if you re…
+  [4] score 0.128 · irs-p519.txt p.18 · 3e230b72470b
+      your main job location is the place where your work is centered, such as where you report for work or are otherwise required to “base” your work. If you have m…
+
+Question: exit
+exit code: 0

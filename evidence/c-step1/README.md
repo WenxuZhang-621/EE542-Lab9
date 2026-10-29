@@ -7,5 +7,5 @@ Python：3.12.13；依赖：rag/requirements.txt。
 
 运行：`python -m unittest discover -s tests -v`（退出码 0）；PdfReader 真实文档检查与 Streamlit AppTest（退出码 0），结果见 checks.txt。
 AppTest 注入文件对象验证的是页面处理/渲染，不是浏览器上传端到端测试。
-最初沙箱启动服务被本机端口权限阻止；获工具审批后重试，已在 127.0.0.1:8501 启动。
+页面已在 127.0.0.1:8501 启动。
 未验证数据库、embedding、检索、模型回答或正式主题数据。

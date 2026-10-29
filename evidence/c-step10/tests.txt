@@ -1,0 +1,51 @@
+test_failed_turn_is_not_remembered_and_empty_question_rejected (test_chain.ChainTests.test_failed_turn_is_not_remembered_and_empty_question_rejected) ... ok
+test_first_turn_answers_from_retrieved_context (test_chain.ChainTests.test_first_turn_answers_from_retrieved_context) ... ok
+test_follow_up_is_rewritten_with_history_before_retrieval (test_chain.ChainTests.test_follow_up_is_rewritten_with_history_before_retrieval) ... ok
+test_openai_chat_uses_default_sampling (test_chain.ChainTests.test_openai_chat_uses_default_sampling) ... ok
+test_sessions_are_isolated (test_chain.ChainTests.test_sessions_are_isolated) ... ok
+test_export_protects_existing_file (test_chunking.ChunkingTests.test_export_protects_existing_file) ... ok
+test_invalid_overlap (test_chunking.ChunkingTests.test_invalid_overlap) ... ok
+test_long_line_bounded_and_overlap (test_chunking.ChunkingTests.test_long_line_bounded_and_overlap) ... ok
+test_newlines_preserved_and_empty_ignored (test_chunking.ChunkingTests.test_newlines_preserved_and_empty_ignored) ... ok
+test_errors_keep_loop_running_until_eof (test_cli.CliTests.test_errors_keep_loop_running_until_eof) ... ok
+test_exit_stops_loop_and_blank_lines_are_skipped (test_cli.CliTests.test_exit_stops_loop_and_blank_lines_are_skipped) ... ok
+test_blank_pdf_preserves_page (test_documents.ExtractionTests.test_blank_pdf_preserves_page) ... ok
+test_encrypted_pdf (test_documents.ExtractionTests.test_encrypted_pdf) ... ok
+test_form_feeds_become_numbered_pages (test_documents.ExtractionTests.test_form_feeds_become_numbered_pages) ... ok
+test_html_keeps_article_text_only (test_documents.ExtractionTests.test_html_keeps_article_text_only) ... ok
+test_html_title_added_when_article_lacks_it (test_documents.ExtractionTests.test_html_title_added_when_article_lacks_it) ... ok
+test_invalid_inputs (test_documents.ExtractionTests.test_invalid_inputs) ... invalid pdf header: b'not a'
+EOF marker not found
+ok
+test_utf8_text_and_source (test_documents.ExtractionTests.test_utf8_text_and_source) ... ok
+test_k_larger_than_index (test_retrieval.RetrievalTests.test_k_larger_than_index) ... ok
+test_ranked_hits_map_back_to_chunks (test_retrieval.RetrievalTests.test_ranked_hits_map_back_to_chunks) ... ok
+test_rejects_empty_question_bad_k_and_dimension (test_retrieval.RetrievalTests.test_rejects_empty_question_bad_k_and_dimension) ... ok
+test_empty_document_rejected (test_storage_mysql.MySQLStorageTests.test_empty_document_rejected) ... ok
+test_failure_rolls_back_document_and_pages (test_storage_mysql.MySQLStorageTests.test_failure_rolls_back_document_and_pages) ... ok
+test_roundtrip_duplicate_and_new_version (test_storage_mysql.MySQLStorageTests.test_roundtrip_duplicate_and_new_version) ... ok
+test_ecfr_keeps_one_paragraph_as_plain_text (test_topic_data.CurationTests.test_ecfr_keeps_one_paragraph_as_plain_text) ... ok
+test_error_pages_are_not_saved_as_documents (test_topic_data.CurationTests.test_error_pages_are_not_saved_as_documents) ... ok
+test_irs_cleanup_removes_proof_header_and_artifacts (test_topic_data.CurationTests.test_irs_cleanup_removes_proof_header_and_artifacts) ... ok
+test_label_matches_any_evidence_phrase (test_topic_data.EvaluationTests.test_label_matches_any_evidence_phrase) ... ok
+test_score_hits_recall_and_mrr (test_topic_data.EvaluationTests.test_score_hits_recall_and_mrr) ... ok
+test_bad_files_become_failed_rows_without_database (test_topic_data.IngestBytesTests.test_bad_files_become_failed_rows_without_database) ... ok
+test_initial_page_waits_for_files (test_upload_app.UploadAppTests.test_initial_page_waits_for_files) ... 2026-10-28 19:03:38.487 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_nothing_stored_shows_warning (test_upload_app.UploadAppTests.test_nothing_stored_shows_warning) ... 2026-10-28 19:03:38.690 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-28 19:03:38.691 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_report_shows_storage_chunks_and_index (test_upload_app.UploadAppTests.test_report_shows_storage_chunks_and_index) ... 2026-10-28 19:03:39.594 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-28 19:03:39.594 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_failure_does_not_publish_index (test_vectorstore.VectorStoreTests.test_failure_does_not_publish_index) ... ok
+test_invalid_response_indices (test_vectorstore.VectorStoreTests.test_invalid_response_indices) ... ok
+test_normalized_cosine_ranking (test_vectorstore.VectorStoreTests.test_normalized_cosine_ranking) ... ok
+test_response_order_and_batching (test_vectorstore.VectorStoreTests.test_response_order_and_batching) ... ok
+test_store_reload_reuse_and_corruption (test_vectorstore.VectorStoreTests.test_store_reload_reuse_and_corruption) ... ok
+test_zero_vectors_rejected (test_vectorstore.VectorStoreTests.test_zero_vectors_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 1.318s
+
+OK

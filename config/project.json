@@ -18,7 +18,9 @@
     "raw": "data/raw",
     "processed": "data/processed",
     "chunks": "data/processed/chunks.jsonl",
-    "questions": "data/processed/questions.jsonl",
+    "questions": "data/topic/questions.jsonl",
+    "topic_index": "data/topic/index",
+    "topic_chunks": "data/topic/index/chunks.jsonl",
     "indexes": "artifacts/indexes",
     "evidence": "evidence"
   }

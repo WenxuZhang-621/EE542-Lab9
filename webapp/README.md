@@ -16,3 +16,5 @@ python -m webapp.backend.run
 前提：自己安装并运行 MySQL，按 `sql/schema.sql` 创建库和最小权限用户（先替换示例密码）；配置可用的 Llama 端点。骨架未创建数据库或模型。
 
 待做：跑通基础服务；实现 `backend/rag_service.py` 并接入 ask_llm；前端来源/状态展示；HTTPS 部署；按 B 提供的信息替换 assetlinks。当前依赖沿用模板，兼容版本待实际安装验证后固定。
+
+C 已交付：`rag.api.retrieve()` 读取仓库里的 `data/topic/index`（F-1 学生知识库）。接入时需要安装 `rag/requirements.txt`，并在 `.env` 配置 OpenAI key；来源标题和网址、免责声明见 [docs/interfaces.md](../docs/interfaces.md)。

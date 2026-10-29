@@ -4,7 +4,8 @@ from typing import List
 from shared.contracts import Chunk, SearchHit
 from shared.config import CONFIG, project_path
 
-INDEX = project_path("indexes") / "openai"
+# Part 4 knowledge base (F-1 student topic), committed to the repository for A and B.
+INDEX = project_path("topic_index")
 
 def build_index(chunks: List[Chunk]) -> None:
     from rag.embeddings import embedding_model

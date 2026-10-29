@@ -1,47 +1,32 @@
 # C：数据与 RAG
 
-先给 A/B 少量真实 chunks，再实现 `api.py` 的接口。`reference/` 保存课程提供的旧版 Streamlit 示例，仅作参考；未验证旧 LangChain API 在当前版本中可用。
+负责 Part 3（文档上传、入库、切块、OpenAI 向量库、带记忆问答、命令行）和 Part 4 主题知识库。`reference/` 是课程提供的旧版 Streamlit 示例，仅作参考。
 
-建议依次新增：`ingest.py`（文件夹 PDF 提取、MySQL 入库）、`chunking.py`（CharacterTextSplitter，size=500）、`vectorstore.py`（OpenAI embedding）、`chain.py`（上下文问答及会话记忆）、`cli.py`（exit 退出）、`upload_app.py`（单/多 PDF、文本及其他选定格式）。以上均已实现，另有 `retrieval.py`（检索）；上传页尚未接入入库和建库。
+从仓库根目录运行；先 `cp -n .env.example .env`，填 `DATABASE_URL`、`OPENAI_API_KEY`、`OPENAI_EMBEDDING_MODEL`、`OPENAI_CHAT_MODEL`（当前 gpt-6-luna，只接受默认 temperature，代码不传该参数）。依赖（Python 3.12+）：`python -m pip install -r rag/requirements.txt`。本地 MySQL：`docker compose --env-file .env -f infra/compose.mysql.yml up -d --wait`（端口 13306）。
 
-从仓库根目录复制 `.env.example` 到根目录 `.env` 后自行配置；实现时使用 `load_dotenv(ROOT / ".env")`（ROOT 来自 shared.config），不另建模块级 .env。切块和检索参数从 `shared.config.CONFIG` 读取。依赖版本在实际实现、验证后写入本模块 requirements.txt，不照抄旧示例环境。
+## 模块
 
-验收：数据库样例、切块参数、真实 embedding、检索上下文与回答、多轮问题及命令行退出。Part 3 使用 OpenAI；Part 4 数据须注明来源。
+| 文件 | 作用 | PDF 依据 |
+|---|---|---|
+| `documents.py` | 提取 PDF、TXT、Markdown、HTML 文本；HTML 只取正文；含换页符的文本按页拆分 | Part 3-I |
+| `ingest.py` | 文件夹或单个文件存入 MySQL（文档版本 + 逐页原文），重复内容跳过 | II.1 |
+| `chunking.py` | `CharacterTextSplitter`，500 字符、重叠 100、换行优先；`chunk_folder()` 入库后切块 | II.2 |
+| `embeddings.py`、`vectorstore.py` | OpenAI embedding（官方地址）+ FAISS 余弦索引，与 chunks.jsonl、manifest 一起保存 | II.3 |
+| `retrieval.py` | 用索引记录的同一模型把问题转成向量，取 top-k | III.2 |
+| `chain.py` | 每个会话一份对话缓冲；追问先改写再检索；只依据检索段落回答并标注来源，冲突时指出 | II.4、III.3 |
+| `cli.py` | driver：可从文件夹跑完整流程；循环提问，输入 `exit` 退出 | III.1 |
+| `upload_app.py` | 上传页：侧边栏上传单个或多个文件 → 入库 → 切块 → 建索引 → 提问 | Part 3-I |
+| `topic_data.py`、`evaluate.py` | Part 4 资料下载与整理；评估问题集与 OpenAI 检索基线 | Part 4 |
+| `api.py` | 给 A 的接口：`retrieve()`、`answer()`，读取 `data/topic/index` | Part 4 |
 
-## 当前已实现：第 1 步
-
-`documents.py` 提取 PDF/TXT/Markdown 文本，`upload_app.py` 提供侧边栏单/多文件上传与逐页预览；`run_upload.py` 从公共配置读取启动地址。运行 `python -m rag.run_upload`。依赖见 requirements.txt，学习路线见仓库根目录 tutorial.md。该页面仍只做预览；入库与切块通过后面的独立命令行运行，向量化和问答待实现。
-
-## 当前已实现：第 2 步
-
-`ingest.py` 批量扫描 PDF，`storage.py` 将文档版本和逐页原文写入 MySQL。已在本机独立 MySQL 8.4 验证；本机 .env 配置端口 13306。安装依赖：`python -m pip install -r rag/requirements.txt`。
-
-```sh
-docker compose --env-file .env -f infra/compose.mysql.yml up -d --wait
-python -m rag.ingest --input data/raw/part3-demo
-LAB9_TEST_MYSQL=1 python -m unittest discover -s tests -v
-```
-
-`data/raw/part3-demo` 是当前机器复制的两份课程 PDF，不提交 Git；其他成员需自行准备输入目录。详细流程与字体警告见 tutorial.md 第 2 课。数据库测试只清理自身随机命名的测试记录。
-
-## 当前已实现：第 3 步
-
-`chunking.py` 从 MySQL 读取指定版本，使用 CharacterTextSplitter 按 500 字符切块，输出 chunks.jsonl 与 manifest。运行示例见 tutorial.md 第 3 课。当前样例 6 页 → 26 块（205–499 字符），保留来源和页码，重复输出一致；尚无向量。
-
-## 当前已实现：第 4 步
-
-`embeddings.py` 调用官方 OpenAI embeddings，`vectorstore.py` 保存 FAISS 索引和有序 chunk 映射。`python -m rag.vectorstore` 已用真实 API 建库：26 块，text-embedding-3-small，1536 维（evidence/c-step6）。详见 tutorial.md 第 4 课。
-
-## 当前已实现：第 5 步（检索、带记忆问答、命令行）
-
-- `retrieval.py::VectorStore.search`：用索引记录的同一模型把问题转成向量，归一化后取 top-k，返回 `SearchHit`（分数为余弦，越大越相关）。
-- `chain.py::create_conversation_chain(llm, vectorstore)`：每个 session 一份完整对话缓冲；有历史时先把追问改写成完整问题，再检索，最后只依据检索段落回答并标注 [1] 等来源，找不到就说文档没有覆盖。
-- `cli.py`：PDF Part 3-III 的 driver，循环提问，输入 `exit` 退出，显示答案和检索到的段落。
-- `api.py`：`retrieve()` 和 `answer()` 已接通，供 A 调用。
+## 常用命令
 
 ```sh
-python -m rag.cli                                   # 用 data/processed/chunks.jsonl 的索引
-python -m rag.cli --input data/raw/part3-lab-only   # 从 PDF 文件夹开始跑完整流程
+python -m rag.run_upload                       # 上传页 http://127.0.0.1:8501
+python -m rag.cli --index data/topic/index     # 主题知识库命令行问答
+python -m rag.cli                              # Part 3 样例：读 C 本机的 data/processed/chunks.jsonl（不进 Git，clone 后用 --index）
+python -m rag.cli --input 文件夹               # 任意文件夹：入库 → 切块 → 建库 → 问答
+python -m unittest discover -s tests           # 离线测试；加 LAB9_TEST_MYSQL=1 含数据库测试
 ```
 
-`.env` 需要 `OPENAI_API_KEY`、`OPENAI_EMBEDDING_MODEL`、`OPENAI_CHAT_MODEL`（当前 gpt-6-luna，它只接受默认 temperature，所以代码不传该参数）。真实运行记录见 evidence/c-step7。上传页仍只做预览，Part 4 主题数据还没开始。
+主题资料、知识库文件和评估方法见 [data/topic/README.md](../data/topic/README.md)。运行记录见 `evidence/c-step1` 至 `c-step10`。

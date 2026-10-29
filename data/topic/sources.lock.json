@@ -1,0 +1,138 @@
+[
+  {
+    "id": "cfr-8-214-2-f",
+    "file": "ecfr-8-214-2-20260930.xml",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-30/title-8.xml?part=214&section=214.2",
+    "bytes": 747126,
+    "sha256": "673bc9721fd2fd0553ca1ca8185d67c3893e31005ee026c2fa521158ad3097b8",
+    "fetched_at": "2026-10-29T01:45:06.393574+00:00"
+  },
+  {
+    "id": "irs-p519",
+    "file": "irs-p519.pdf",
+    "url": "https://www.irs.gov/pub/irs-pdf/p519.pdf",
+    "bytes": 2080184,
+    "sha256": "c220ed64473d9f26b09784e45d5c4e05b052caace1263278bb6dc2060796ed85",
+    "fetched_at": "2026-10-29T01:43:57.922354+00:00"
+  },
+  {
+    "id": "irs-f8843",
+    "file": "irs-f8843.pdf",
+    "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+    "bytes": 108330,
+    "sha256": "b685fcb296ae6a86ee47d82ceaa5a7b64f0a04e1749420e89d6ddde5ab5a63c8",
+    "fetched_at": "2026-10-29T01:43:58.135595+00:00"
+  },
+  {
+    "id": "irs-foreign-students",
+    "file": "irs-foreign-students.html",
+    "url": "https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors",
+    "bytes": 111938,
+    "sha256": "978cf97dc8454031841680038e9f45e4c078a84ac197dc26460374465d83a921",
+    "fetched_at": "2026-10-29T01:43:58.351497+00:00"
+  },
+  {
+    "id": "uscis-opt",
+    "file": "uscis-opt-f1.html",
+    "url": "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students",
+    "bytes": 89956,
+    "sha256": "04f9192b850dd6116f580447e956458d4f2bbb776f9500d2d98312603bb5f23a",
+    "fetched_at": "2026-10-29T01:43:58.562413+00:00"
+  },
+  {
+    "id": "sits-maintaining-status",
+    "file": "sits-maintaining-status.html",
+    "url": "https://studyinthestates.dhs.gov/students/maintaining-status",
+    "bytes": 89000,
+    "sha256": "05ec7a9118041927e344ec6ca713f9bffff687923cb1c06bc16cba97c0762ed7",
+    "fetched_at": "2026-10-29T01:43:58.880455+00:00"
+  },
+  {
+    "id": "sits-full-course",
+    "file": "sits-full-course-of-study.html",
+    "url": "https://studyinthestates.dhs.gov/students/full-course-of-study",
+    "bytes": 89258,
+    "sha256": "06a29191618b0de65e3e1e3185acb5c46efb85bf5128e8cfe6a70a7651342d97",
+    "fetched_at": "2026-10-29T01:43:59.574639+00:00"
+  },
+  {
+    "id": "sits-working",
+    "file": "sits-working-in-the-us.html",
+    "url": "https://studyinthestates.dhs.gov/students/working-united-states",
+    "bytes": 85330,
+    "sha256": "baad01ff23bacbd728e126c3caab22511263f81b8c939fbd7d000beab6f8308b",
+    "fetched_at": "2026-10-29T01:44:00.196556+00:00"
+  },
+  {
+    "id": "sits-practical-training",
+    "file": "sits-applying-for-practical-training.html",
+    "url": "https://studyinthestates.dhs.gov/students/work/applying-for-practical-training",
+    "bytes": 101264,
+    "sha256": "b77a420aeb1620c88b8350c67401ccefa5046ecc6e73614b2cf6b65f556b6ab6",
+    "fetched_at": "2026-10-29T01:44:00.481916+00:00"
+  },
+  {
+    "id": "sits-training-opportunities",
+    "file": "sits-training-opportunities.html",
+    "url": "https://studyinthestates.dhs.gov/students/training-opportunities-in-the-united-states",
+    "bytes": 87779,
+    "sha256": "b34c66a6dbc45efa88a175da950143087ae17ae266e314c89fa01d717560b6bb",
+    "fetched_at": "2026-10-29T01:44:00.765942+00:00"
+  },
+  {
+    "id": "sits-travel",
+    "file": "sits-traveling.html",
+    "url": "https://studyinthestates.dhs.gov/students/study/traveling-as-an-f-or-m-student",
+    "bytes": 84343,
+    "sha256": "aa90783c38464c980ce25a26ee4b39484b35161cab10b783b2108e308c7ea7fe",
+    "fetched_at": "2026-10-29T01:44:01.887801+00:00"
+  },
+  {
+    "id": "sits-transfer",
+    "file": "sits-transfer-f1.html",
+    "url": "https://studyinthestates.dhs.gov/students/study/instructions-for-transferring-to-another-school-as-an-f-1-student",
+    "bytes": 82986,
+    "sha256": "6668129e48a99dc54700e7d9732841581a8defcbf42ce989daf0e94057a6d6cf",
+    "fetched_at": "2026-10-29T01:44:02.098886+00:00"
+  },
+  {
+    "id": "sits-change-of-status",
+    "file": "sits-change-of-status.html",
+    "url": "https://studyinthestates.dhs.gov/students/change-of-status",
+    "bytes": 90529,
+    "sha256": "addc912b62ea837a47af87926a3ca4f7cf3590eb9b9652ee80384409dbc2b7d8",
+    "fetched_at": "2026-10-29T01:44:02.709043+00:00"
+  },
+  {
+    "id": "sits-cap-gap",
+    "file": "sits-cap-gap.html",
+    "url": "https://studyinthestates.dhs.gov/students/h-1b-status-and-the-cap-gap-extension",
+    "bytes": 98121,
+    "sha256": "760ccaa844b85ce6964b73f8418f6d2a9431d75034f202271c0bf9c4776a4d84",
+    "fetched_at": "2026-10-29T01:44:03.926804+00:00"
+  },
+  {
+    "id": "sits-ssn",
+    "file": "sits-ssn.html",
+    "url": "https://studyinthestates.dhs.gov/students/obtaining-social-security-number",
+    "bytes": 84386,
+    "sha256": "11897bb2105fa7ccb407e15981db7d09a00547bb9ff9ca3050d95551a4e76664",
+    "fetched_at": "2026-10-29T01:44:04.411457+00:00"
+  },
+  {
+    "id": "sits-itin",
+    "file": "sits-itin.html",
+    "url": "https://studyinthestates.dhs.gov/students/individual-taxpayer-identification-number-itin",
+    "bytes": 82439,
+    "sha256": "0f200c6ec0ccc08244556ca05096feb0ea8977a984a216b27d0a358fbc876b6e",
+    "fetched_at": "2026-10-29T01:44:05.661864+00:00"
+  },
+  {
+    "id": "sits-form-i-20",
+    "file": "sits-form-i-20.html",
+    "url": "https://studyinthestates.dhs.gov/students/prepare/students-and-the-form-i-20",
+    "bytes": 86087,
+    "sha256": "5db85bb144e0b5a70b3db3197f7e4148f9413c099dd4d6bee0d1c8cbfa0334b1",
+    "fetched_at": "2026-10-29T01:44:05.894517+00:00"
+  }
+]

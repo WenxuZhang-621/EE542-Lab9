@@ -1,8 +1,8 @@
 # EE542 Lab9 — Custom Chatbot
 
-主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。**C 已开始实现上传与文本预览；完整 RAG、网站集成与算法仍待完成。**
+主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。主题：**F-1 International Student Assistant**（F-1 身份、CPT/OPT 实习、报税）。**C 的 RAG 和 Part 4 知识库已完成；网站集成、App 和自定义 embedding 待完成。**
 
-## 分工（建议，待全组确认）
+## 分工
 
 | 成员 | 负责部分 | 代码贡献 |
 |---|---|---|
@@ -54,17 +54,12 @@
 ## 开工前
 
 - 在仓库根目录执行 `cp -n .env.example .env`，填自己的数据库、JWT secret 和 API key
-- Python 3.10+，所有模块从仓库根目录运行；各模块的运行步骤见该目录的 README
+- Python 3.12+（`rag/requirements.txt` 锁定的 numpy 2.5.4 需要 3.12+；已在 3.12.13 验证），所有模块从仓库根目录运行；各模块的运行步骤见该目录的 README
 - 公共参数（端口、切块、top-k、路径）只在 `config/project.json` 修改，改它或 `shared/` 前先在群里说
 - `webapp/`、`android/` 和 `rag/reference/` 来自课程模板，不算个人贡献；每人用自己的 Git 身份提交自己的改动
 - 不提交 `.env`、签名私钥、模型文件和原始数据
 
-## C 的逐步实现
+## C 的进度
 
-学习入口：[tutorial.md](tutorial.md)。当前先做 Part 3-I 上传与文本预览；在根目录运行 `source .venv/bin/activate` 后执行 `python -m rag.run_upload`，访问 http://127.0.0.1:8501。已通过独立命令行完成 PDF 批量提取和 MySQL 原文入库；上传页仍只预览。尚未调用 OpenAI 或构建向量库。
-
-C 的入库入口：`python -m rag.ingest --input data/raw/part3-demo`。本地独立 MySQL 配置见 `infra/compose.mysql.yml`，使用本机 13306 端口；详细运行、验证和停止方式见 tutorial.md 第 2 课。
-
-C 已完成 Part 3-II.2：`rag/chunking.py` 从 MySQL 原文导出带来源/页码的 chunks.jsonl；学习代码见 tutorial.md 第 3 课。当前使用实验 PDF 作流程样例，正式主题数据尚未开始。
-
-C 已用真实 OpenAI API 建好实验 PDF 的向量库，并完成 `retrieve()`、带记忆的问答链和 `exit` 命令行（`python -m rag.cli`），见 [rag/README.md](rag/README.md)。上传页接入和 Part 4 主题数据仍待完成。
+- **已完成**：上传页（上传 → MySQL → 切块 → OpenAI 向量库 → 提问）、文件夹批量入库、500 字符切块、带记忆的问答链、`exit` 命令行，以及给 A 的 `retrieve()`。用法见 [rag/README.md](rag/README.md)。
+- **Part 4 知识库**：17 份联邦政府官方资料（eCFR、IRS、USCIS、Study in the States），1694 块，在 `data/topic/`；同目录有给 B 的 32 题评估集和 OpenAI 检索基线。见 [data/topic/README.md](data/topic/README.md)。

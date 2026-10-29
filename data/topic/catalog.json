@@ -1,0 +1,121 @@
+[
+  {
+    "source": "cfr-8-214-2-f.txt",
+    "id": "cfr-8-214-2-f",
+    "publisher": "National Archives and GPO, eCFR",
+    "title": "8 CFR 214.2(f) Students in colleges, universities and other academic institutions (eCFR, as amended through 2026-09-30)",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-30/title-8.xml?part=214&section=214.2"
+  },
+  {
+    "source": "irs-p519.txt",
+    "id": "irs-p519",
+    "publisher": "IRS",
+    "title": "Publication 519, U.S. Tax Guide for Aliens",
+    "url": "https://www.irs.gov/pub/irs-pdf/p519.pdf"
+  },
+  {
+    "source": "irs-f8843.txt",
+    "id": "irs-f8843",
+    "publisher": "IRS",
+    "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+    "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf"
+  },
+  {
+    "source": "irs-foreign-students.html",
+    "id": "irs-foreign-students",
+    "publisher": "IRS",
+    "title": "Foreign students, scholars, teachers, researchers and exchange visitors",
+    "url": "https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors"
+  },
+  {
+    "source": "uscis-opt-f1.html",
+    "id": "uscis-opt",
+    "publisher": "USCIS",
+    "title": "Optional Practical Training (OPT) for F-1 Students",
+    "url": "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students"
+  },
+  {
+    "source": "sits-maintaining-status.html",
+    "id": "sits-maintaining-status",
+    "publisher": "DHS Study in the States",
+    "title": "Maintaining Status",
+    "url": "https://studyinthestates.dhs.gov/students/maintaining-status"
+  },
+  {
+    "source": "sits-full-course-of-study.html",
+    "id": "sits-full-course",
+    "publisher": "DHS Study in the States",
+    "title": "Full Course of Study",
+    "url": "https://studyinthestates.dhs.gov/students/full-course-of-study"
+  },
+  {
+    "source": "sits-working-in-the-us.html",
+    "id": "sits-working",
+    "publisher": "DHS Study in the States",
+    "title": "Working in the United States",
+    "url": "https://studyinthestates.dhs.gov/students/working-united-states"
+  },
+  {
+    "source": "sits-applying-for-practical-training.html",
+    "id": "sits-practical-training",
+    "publisher": "DHS Study in the States",
+    "title": "Applying for Practical Training",
+    "url": "https://studyinthestates.dhs.gov/students/work/applying-for-practical-training"
+  },
+  {
+    "source": "sits-training-opportunities.html",
+    "id": "sits-training-opportunities",
+    "publisher": "DHS Study in the States",
+    "title": "Training Opportunities in the United States",
+    "url": "https://studyinthestates.dhs.gov/students/training-opportunities-in-the-united-states"
+  },
+  {
+    "source": "sits-traveling.html",
+    "id": "sits-travel",
+    "publisher": "DHS Study in the States",
+    "title": "Traveling as an F or M Student",
+    "url": "https://studyinthestates.dhs.gov/students/study/traveling-as-an-f-or-m-student"
+  },
+  {
+    "source": "sits-transfer-f1.html",
+    "id": "sits-transfer",
+    "publisher": "DHS Study in the States",
+    "title": "Transferring to Another School as an F-1 Student",
+    "url": "https://studyinthestates.dhs.gov/students/study/instructions-for-transferring-to-another-school-as-an-f-1-student"
+  },
+  {
+    "source": "sits-change-of-status.html",
+    "id": "sits-change-of-status",
+    "publisher": "DHS Study in the States",
+    "title": "Change of Status",
+    "url": "https://studyinthestates.dhs.gov/students/change-of-status"
+  },
+  {
+    "source": "sits-cap-gap.html",
+    "id": "sits-cap-gap",
+    "publisher": "DHS Study in the States",
+    "title": "H-1B Status and the Cap-Gap Extension",
+    "url": "https://studyinthestates.dhs.gov/students/h-1b-status-and-the-cap-gap-extension"
+  },
+  {
+    "source": "sits-ssn.html",
+    "id": "sits-ssn",
+    "publisher": "DHS Study in the States",
+    "title": "Obtaining a Social Security Number",
+    "url": "https://studyinthestates.dhs.gov/students/obtaining-social-security-number"
+  },
+  {
+    "source": "sits-itin.html",
+    "id": "sits-itin",
+    "publisher": "DHS Study in the States",
+    "title": "Individual Taxpayer Identification Number (ITIN)",
+    "url": "https://studyinthestates.dhs.gov/students/individual-taxpayer-identification-number-itin"
+  },
+  {
+    "source": "sits-form-i-20.html",
+    "id": "sits-form-i-20",
+    "publisher": "DHS Study in the States",
+    "title": "Students and the Form I-20",
+    "url": "https://studyinthestates.dhs.gov/students/prepare/students-and-the-form-i-20"
+  }
+]

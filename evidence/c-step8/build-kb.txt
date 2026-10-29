@@ -1,0 +1,24 @@
+2026-10-28 18:52:01 PDT
+$ python -m rag.topic_data fetch && python -m rag.topic_data curate
+$ python -m rag.cli --input data/raw/topic/corpus --index data/topic/index --build-only
+Stored cfr-8-214-2-f.txt: skipped (1 pages)
+Stored irs-f8843.txt: skipped (4 pages)
+Stored irs-foreign-students.html: skipped (1 pages)
+Stored irs-p519.txt: inserted (95 pages)
+Stored sits-applying-for-practical-training.html: skipped (1 pages)
+Stored sits-cap-gap.html: skipped (1 pages)
+Stored sits-change-of-status.html: skipped (1 pages)
+Stored sits-form-i-20.html: skipped (1 pages)
+Stored sits-full-course-of-study.html: skipped (1 pages)
+Stored sits-itin.html: skipped (1 pages)
+Stored sits-maintaining-status.html: skipped (1 pages)
+Stored sits-ssn.html: skipped (1 pages)
+Stored sits-training-opportunities.html: skipped (1 pages)
+Stored sits-transfer-f1.html: skipped (1 pages)
+Stored sits-traveling.html: skipped (1 pages)
+Stored sits-working-in-the-us.html: skipped (1 pages)
+Stored uscis-opt-f1.html: skipped (1 pages)
+Chunked 17 documents: 1694 chunks, 21-500 characters
+Index created: 1694 chunks, text-embedding-3-small (1536 dims)
+Note: General information from official U.S. government sources; not legal or tax advice.
+exit code: 0

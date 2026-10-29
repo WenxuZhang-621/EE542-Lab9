@@ -1,0 +1,11 @@
+{
+  "provider": "openai",
+  "model": "text-embedding-3-small",
+  "dimension": 1536,
+  "count": 1694,
+  "metric": "cosine via normalized inner product",
+  "chunks_sha256": "3a2a7947525352032f63669b6acb35c30203baf5682d98d1cbe648ac40758cbc",
+  "index_sha256": "65b7acfb56db9137b735f4e39200c5d4c691b54cbb830a243226ac5798c927da",
+  "total_tokens": 163063,
+  "created_at": "2026-10-29T01:52:36.778564+00:00"
+}

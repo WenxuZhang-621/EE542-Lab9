@@ -9,7 +9,8 @@ from shared.contracts import SearchHit
 
 class VectorStore:
     def __init__(self, folder: Path, *, client=None):
-        self.index, self.chunks, self.manifest = load_store(folder)
+        self.folder = Path(folder)
+        self.index, self.chunks, self.manifest = load_store(self.folder)
         self.client = client
 
     def search(self, question: str, k: int) -> list[SearchHit]:

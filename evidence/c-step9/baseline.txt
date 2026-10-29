@@ -1,0 +1,4 @@
+2026-10-28 18:55:41 PDT
+$ python -m rag.evaluate baseline
+{"hit@1": 0.6562, "hit@4": 0.9375, "hit@10": 0.9688, "recall@1": 0.3865, "recall@4": 0.7026, "recall@10": 0.8495, "mrr": 0.7899}
+exit code: 0

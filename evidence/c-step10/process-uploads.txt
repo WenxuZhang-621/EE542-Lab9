@@ -1,0 +1,8 @@
+2026-10-28 18:56:58 PDT
+sits-ssn.html skipped 1 
+sits-itin.html skipped 1 
+lab9-requirements.pdf skipped 6 
+notes.docx failed None Supported formats: PDF, UTF-8 TXT, Markdown and HTML.
+chunks 38 (25-499 chars); index created 38 x 1536 text-embedding-3-small -> upload-04a534e7a4de
+Answer: An F-1 student applies by submitting **Form W-7** to the IRS **with a U.S. tax return**. The application also requires a certification letter showing the student’s full name and SEVIS number, copies of identity and foreign-status documents (including Form I-20), and any other documents required for the W-7 application. [1][3]
+Top sources: [('sits-itin.html', 0.775), ('sits-itin.html', 0.757), ('sits-itin.html', 0.733), ('sits-itin.html', 0.691)]
