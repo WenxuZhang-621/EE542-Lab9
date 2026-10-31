@@ -1,0 +1,2 @@
+-r rag/requirements.txt
+-r webapp/backend/requirements.txt

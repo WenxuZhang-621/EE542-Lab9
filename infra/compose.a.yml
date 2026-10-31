@@ -1,0 +1,72 @@
+name: ee542-lab9-a
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: groupchat
+      MYSQL_USER: chatuser
+      MYSQL_PASSWORD: ${LAB9_MYSQL_PASSWORD:?Run python -m scripts.setup_a first}
+      MYSQL_ROOT_PASSWORD: ${LAB9_MYSQL_ROOT_PASSWORD:?Run python -m scripts.setup_a first}
+    volumes:
+      - mysql_a:/var/lib/mysql
+    healthcheck:
+      test: [CMD-SHELL, "mysqladmin ping -h 127.0.0.1 --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  web:
+    build:
+      context: ..
+      dockerfile: webapp/Dockerfile
+    environment:
+      DATABASE_URL: mysql+asyncmy://chatuser:${LAB9_MYSQL_PASSWORD}@mysql:3306/groupchat
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in root .env}
+      JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-1440}
+      PUBLIC_MODE: ${PUBLIC_MODE:-false}
+      REGISTRATION_CODE: ${REGISTRATION_CODE:-}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_EMBEDDING_MODEL: text-embedding-3-small
+      LLM_API_BASE: ${DOCKER_LLM_API_BASE:-http://llama:8001/v1}
+      LLM_MODEL: ${LLM_MODEL:-llama-3-8b-instruct}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  llama:
+    image: ${LLAMA_CPP_IMAGE:-ghcr.io/ggml-org/llama.cpp:server}
+    profiles: [llama]
+    volumes:
+      - ${LLAMA_MODEL_DIR:-../models}:/models:ro
+    command: ["-m", "/models/${LLAMA_MODEL_FILE:-model.gguf}", "--host", "0.0.0.0", "--port", "8001", "--ctx-size", "4096", "--alias", "${LLM_MODEL:-llama-3-8b-instruct}"]
+    restart: unless-stopped
+  caddy:
+    image: caddy:2-alpine
+    profiles: [https]
+    environment:
+      LAB9_DOMAIN: ${LAB9_DOMAIN:-localhost}
+      ACME_EMAIL: ${ACME_EMAIL:-}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  mysql_a:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,7 @@
+{
+  "registration_and_login": true,
+  "two_way_websocket_broadcast": true,
+  "database_history_readback": true,
+  "database": "mysql",
+  "llm_invoked": false
+}

@@ -1,0 +1,148 @@
+{
+  "real_services": true,
+  "backend": "MySQL + local llama.cpp + OpenAI embeddings",
+  "two_turn_conversation": [
+    {
+      "question": "What is Form 8843 used for?",
+      "answer": "Form 8843 is used by alien individuals to explain the basis of their claim that they can exclude days of presence in the United States for purposes of the substantial presence test because they were an exempt individual or unable to leave the United States due to a medical condition. [1]",
+      "sources": [
+        {
+          "number": 1,
+          "chunk_id": "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+          "source": "irs-f8843.txt",
+          "page": 3,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "Form 8843 (2025) Page 3\nSection references are to the Internal Revenue Code unless \notherwise specified.\nFuture Developments\nFor the latest information about developments related to Form \n8843 and its instructions, such as legislation enacted after they \nwere published, go to www.irs.gov/Form8843.\nGeneral Instructions\nWho Must File\nIf you are an alien individual (other than a foreign governmentrelated individual), you must file Form 8843 to explain the basis \n\n\nof your claim that you can exclude days of presence in the \nUnited States for purposes of the substantial presence test \nbecause you:\n• Were an exempt individual, or\n• Were unable to leave the United States because of a medical \ncondition or medical problem. \nWhen and Where To File\nIf you are filing a 2025 Form 1040-NR, attach Form 8843 to it. \nMail your tax return by the due date (including extensions) to the \naddress shown in your tax return instructions.",
+          "context_chunk_ids": [
+            "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+            "a5267e7398828076e78a3d65cc4bcc1bc52f347a20427f6ebe73bbbc16e6f8ef"
+          ],
+          "cited": true
+        },
+        {
+          "number": 2,
+          "chunk_id": "316a09f903ff35c6d4f254b001888496d5d6e625f4eee02169d287c30008431c",
+          "source": "irs-f8843.txt",
+          "page": 1,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "Form 8843 2025Statement for Exempt Individuals and Individuals With a Medical Condition\nDepartment of the Treasury \nInternal Revenue Service\nFor use by alien individuals only.\nGo to www.irs.gov/Form8843 for the latest information.\nOMB No. 1545-0074\nAttachment \nSequence No. 102\nFor calendar year 2025, or tax year beginning , 2025, and ending , 20 .\nYour first name and initial Last name Your U.S. taxpayer identification number (TIN), if any\nFill in your \naddresses only if \nyou are filing this \n\n\nFill in your \naddresses only if \nyou are filing this \nform by itself and \nnot with your U.S. \ntax return.\nAddress in country of residence Address in the United States\nPart I General Information\n1a Type of U.S. visa (for example, F, J, M, Q, etc.) and date you entered the United States:\nb Current nonimmigrant status. If your status has changed, also enter date of change and previous status. See instructions.\n2 Of what country or countries were you a citizen during the tax year?",
+          "context_chunk_ids": [
+            "316a09f903ff35c6d4f254b001888496d5d6e625f4eee02169d287c30008431c",
+            "d6e99d8ee6c58dd216767137d917171adbcd4443ed02222e3217fd8a6a53eef5"
+          ],
+          "cited": false
+        },
+        {
+          "number": 3,
+          "chunk_id": "33b1ef160e0c88c16952a9338c907b2782808a7c858e4e7c89260890d83e2771",
+          "source": "irs-f8843.txt",
+          "page": 3,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "\ntemporarily present in the United States as a foreign \ngovernment-related individual under an “A” or “G” visa, other \nthan individuals holding “A-3” or “G-5” class visas. An individual \npresent under an “A-3” or “G-5” class visa is not considered a \nforeign government-related individual and must count all their \ndays of presence in the United States for purposes of the \nsubstantial presence test. For more details, see Pub. 519. If you \n\n\nsubstantial presence test. For more details, see Pub. 519. If you \nare present under any other “A” or “G” class visa, you are not \nrequired to file Form 8843.\nSpecific Instructions\nPart I—General Information\nIf you are attaching Form 8843 to Form 1040-NR, you aren’t \nrequired to complete lines 1a through 4a of Form 8843 if you \nprovide the requested information on the corresponding lines of \nForm 1040-NR. See Schedule OI (Form 1040-NR).\n\n\nForm 1040-NR. See Schedule OI (Form 1040-NR).\nIn this case, enter “Information provided on Form 1040-NR” \non line 1a of Form 8843. Complete line 4b and the rest of Form \n8843.\nIf Form 8843 is filed separately, you must complete all entries \non the form.\nLine 1a. Enter your nonimmigrant visa type (for example, F-1, \nF-2, J-1, J-2, H1-B, etc.) and the corresponding date of the \nmost recent entry to the United States. See your electronic \narrival/departure record from the U.S. Customs and Border ",
+          "context_chunk_ids": [
+            "d84f949e810b32619326f33151a99c8fa4937b496029240614f168cbc9066530",
+            "33b1ef160e0c88c16952a9338c907b2782808a7c858e4e7c89260890d83e2771",
+            "8e6230f9a95e6921a8f459b777ef69b707f057ff5cc0f3abaa3397fffb9131e9"
+          ],
+          "cited": false
+        },
+        {
+          "number": 4,
+          "chunk_id": "25491720672f57a6b20a784a9915bc94d73cea0b12b042a6715abe3fc80bc247",
+          "source": "irs-p519.txt",
+          "page": 8,
+          "title": "Publication 519, U.S. Tax Guide for Aliens",
+          "url": "https://www.irs.gov/pub/irs-pdf/p519.pdf",
+          "publisher": "IRS",
+          "excerpt": "\n• You were temporarily in the United States as a teacher \nor trainee on a “ J” or “Q” visa.\n• You were temporarily in the United States as a student \non an “F ,” “ J,” “M,” or “Q” visa.\n• You were a professional athlete competing in a charitable sports event.\nAttach Form 8843 to your 2025 income tax return. If you \ndo not have to file a return, send Form 8843 to the following address.\nDepartment of the Treasury\nInternal Revenue Service Center\nAustin, TX 73301-0215\n\n\nDepartment of the Treasury\nInternal Revenue Service Center\nAustin, TX 73301-0215\nYou must file Form 8843 by the due date for filing Form \n1040-NR. The due date for filing is discussed in chapter 7. \nIf you are required to file Form 8843 and you do not timely \nfile Form 8843, you cannot exclude the days you were \npresent in the United States as a professional athlete or \nbecause of a medical condition that arose while you were \nin the United States. This does not apply if you can show \n\n\nin the United States. This does not apply if you can show \nby clear and convincing evidence that you took reasonable actions to become aware of the filing requirements and \nsignificant steps to comply with those requirements.\nCloser Connection to a Foreign Country\nEven if you meet the substantial presence test, you can be \ntreated as a nonresident alien if you:\n• Are present in the United States for less than 183 days \nduring the year,\n• Maintain a tax home in a foreign country during the ",
+          "context_chunk_ids": [
+            "98f7392f20747aaed6f821cbe584493ecdc11282ef402826b8acb8f6b6d10530",
+            "25491720672f57a6b20a784a9915bc94d73cea0b12b042a6715abe3fc80bc247",
+            "46eedab9f1ec15bed7e56c566c93d21f8564f3e5202ac9837943b452e57cbeb7"
+          ],
+          "cited": false
+        }
+      ],
+      "reply_id": 29,
+      "loading_and_reply_broadcast": true,
+      "sources_persisted": true
+    },
+    {
+      "question": "What information does that form ask students to provide?",
+      "answer": "According to [1], Part III Students, Form 8843 asks students to provide the following information:\n\n1. The name, address, and telephone number of the academic institution they attended during 2025 (line 9).\n2. The name, address, and telephone number of the director of the academic or other specialized program they participated in during 2025 (line 10).\n3. The type of U.S. visa (F, J, M, or Q) they held during 2019, 2020, 2021, 2022, 2023, and 2024 (line 11).\n4. If the type of visa they held during any of these years changed, they must attach a statement showing the new visa type and the date it was acquired (line 11).\n5. Whether they were exempt as a teacher, trainee, or student for any part of more than 5 calendar years (line 12).",
+      "sources": [
+        {
+          "number": 1,
+          "chunk_id": "909cbc99a85880568c120b893c60995e2cff8594ec2f6df9352c6bc766583e3d",
+          "source": "irs-f8843.txt",
+          "page": 1,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "\n2021 2022 2023 2024 . If the type of visa you held during any\nof these years changed, attach a statement showing the new visa type and the date it was acquired.\n8 Were you exempt as a teacher, trainee, or student for any part of 2 of the preceding 6 calendar years (2019 \nthrough 2024)? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Yes No\nIf you checked the “Yes” box on line 8, you cannot exclude days of presence as a teacher or trainee unless \n\n\nyou meet the Exception explained in the instructions.\nPart III Students\n9 Enter the name, address, and telephone number of the academic institution you attended during 2025:\n10 Enter the name, address, and telephone number of the director of the academic or other specialized program you participated\nin during 2025:\n11 Enter the type of U.S. visa (F, J, M, or Q) you held during: 2019 2020\n2021 2022 2023 2024 . If the type of visa you held during any\n\n\n2021 2022 2023 2024 . If the type of visa you held during any\nof these years changed, attach a statement showing the new visa type and the date it was acquired.\n12 Were you exempt as a teacher, trainee, or student for any part of more than 5 calendar years? . . . . Yes No\nIf you checked the “Yes” box on line 12, you must provide sufficient facts on an attached statement to \nestablish that you do not intend to reside permanently in the United States.\n13 \n ",
+          "context_chunk_ids": [
+            "f841b988da1f066de9237dae9323031aec1bc36538e6fd02c6b0ae3cc17caf17",
+            "909cbc99a85880568c120b893c60995e2cff8594ec2f6df9352c6bc766583e3d",
+            "bcd2f358a3ffcadfa5d1b118f6b6bb19215a16986edbbd03f64fe2fe75c2a916"
+          ],
+          "cited": true
+        },
+        {
+          "number": 2,
+          "chunk_id": "5cf251029652802c1b729634ce6d0599109f00e53dc20878ecc9eb4a56ee139e",
+          "source": "irs-f8843.txt",
+          "page": 4,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "\nof the following apply.\n1. You were exempt as a teacher, trainee, or student for any \npart of 3 (or fewer) of the 6 prior calendar years.\n2. A foreign employer paid all your compensation during 2025.\n3. You were present in the United States as a teacher or \ntrainee in any of the 6 prior years.\n4. A foreign employer paid all of your compensation during \neach of those prior 6 years you were present in the United \nStates as a teacher or trainee.\nFor more details, see Pub. 519.\n\n\nStates as a teacher or trainee.\nFor more details, see Pub. 519.\nIf you meet this exception, you must attach information to \nverify that a foreign employer paid all the compensation you \nreceived in 2025 and all prior years that you were present in the \nUnited States as a teacher or trainee.\nPart III—Students\nA student is an individual who is temporarily present in the \nUnited States under an “F,” “J,” “M,” or “Q” visa and who \nsubstantially complies with the requirements of the visa.\n\n\nsubstantially complies with the requirements of the visa.\nIf you were a student under an “F,” “J,” “M,” or “Q” visa, you \nare considered to have substantially complied with the visa \nrequirements if you haven’t engaged in activities that are \nprohibited by U.S. immigration laws and could result in the loss \nof your visa status. \nEven if you meet these requirements, you can’t exclude days \nof presence in 2025 as a student if you were exempt as a ",
+          "context_chunk_ids": [
+            "25dbdbe702f6d5f84a26d88bb64a438cc59f230e810f551021d8aa645205a0e4",
+            "5cf251029652802c1b729634ce6d0599109f00e53dc20878ecc9eb4a56ee139e",
+            "6559378cad6bacaac220ae6d1522af8e56e6e1d67c2673da74b0bd3a98b241e6"
+          ],
+          "cited": false
+        },
+        {
+          "number": 3,
+          "chunk_id": "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+          "source": "irs-f8843.txt",
+          "page": 3,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "Form 8843 (2025) Page 3\nSection references are to the Internal Revenue Code unless \notherwise specified.\nFuture Developments\nFor the latest information about developments related to Form \n8843 and its instructions, such as legislation enacted after they \nwere published, go to www.irs.gov/Form8843.\nGeneral Instructions\nWho Must File\nIf you are an alien individual (other than a foreign governmentrelated individual), you must file Form 8843 to explain the basis \n\n\nof your claim that you can exclude days of presence in the \nUnited States for purposes of the substantial presence test \nbecause you:\n• Were an exempt individual, or\n• Were unable to leave the United States because of a medical \ncondition or medical problem. \nWhen and Where To File\nIf you are filing a 2025 Form 1040-NR, attach Form 8843 to it. \nMail your tax return by the due date (including extensions) to the \naddress shown in your tax return instructions.",
+          "context_chunk_ids": [
+            "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+            "a5267e7398828076e78a3d65cc4bcc1bc52f347a20427f6ebe73bbbc16e6f8ef"
+          ],
+          "cited": false
+        },
+        {
+          "number": 4,
+          "chunk_id": "97e9227818ad82b36f43b0928298880a176704c42b1ebeb044d1bc9fe941e450",
+          "source": "irs-f8843.txt",
+          "page": 4,
+          "title": "Form 8843, Statement for Exempt Individuals, with instructions",
+          "url": "https://www.irs.gov/pub/irs-pdf/f8843.pdf",
+          "publisher": "IRS",
+          "excerpt": "Form 8843 (2025) Page 4\nEven if you meet these requirements, you can’t exclude days \nof presence in 2025 as a teacher or trainee if you were exempt \nas a teacher, trainee, or student for any part of 2 of the 6 prior \ncalendar years. But see the Exception, later.\nIf you qualify to exclude days of presence as a teacher or \ntrainee, complete Parts I and II of Form 8843. If you have a “Q” \nvisa, complete Part I and only lines 6 through 8 of Part II. On line \n\n\nvisa, complete Part I and only lines 6 through 8 of Part II. On line \n6, enter the name, address, and telephone number of the \ndirector of the cultural exchange program in which you \nparticipated.\nException. If you were exempt as a teacher, trainee, or student \nfor any part of 2 of the 6 prior calendar years, you can exclude \ndays of presence in 2025 as a teacher or trainee only if all four \nof the following apply.\n1. You were exempt as a teacher, trainee, or student for any ",
+          "context_chunk_ids": [
+            "97e9227818ad82b36f43b0928298880a176704c42b1ebeb044d1bc9fe941e450",
+            "63391aac4b64324621ad14e8435a98939683d59ab1b7eadd0df6dd7b1625198e"
+          ],
+          "cited": false
+        }
+      ],
+      "reply_id": 31,
+      "loading_and_reply_broadcast": true,
+      "sources_persisted": true
+    }
+  ]
+}

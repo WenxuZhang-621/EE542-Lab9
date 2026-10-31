@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-10-31T22:49:36.866293+00:00",
+  "question": "What is Form 8843 used for?",
+  "embedding_model": "text-embedding-3-small",
+  "dimensions": 1536,
+  "indexed_chunks": 1694,
+  "request_tokens": 9,
+  "raw_query_l2_norm": 1.0001369,
+  "normalized_query_first_8": [
+    0.0109009,
+    -0.0170417,
+    0.0110535,
+    0.061515,
+    -0.0066748,
+    0.019376,
+    -0.0330155,
+    0.0204592
+  ],
+  "normalized_query_l2_norm": 1.0000001,
+  "search": "FAISS IndexFlatIP on unit-length vectors; inner product equals cosine similarity",
+  "note": "These eight coordinates are samples of a 1536-dimensional learned embedding. They are not B's normalized word-cluster histogram.",
+  "top_4": [
+    {
+      "rank": 1,
+      "chunk_id": "f3ffa882a1c90919b3b9f9f67af7d78ac46e75008e4a6558660dc3c9da5a709c",
+      "source": "irs-f8843.txt",
+      "page": 3,
+      "text": "Form 8843 (2025) Page 3\nSection references are to the Internal Revenue Code unless \notherwise specified.\nFuture Developments\nFor the latest information about developments related to Form \n8843 and its instructions, such as legislation enacted after they \nwere published, go to www.irs.gov/Form8843.\nGeneral Instructions\nWho Must File\nIf you are an alien individual (other than a foreign governmentrelated individual), you must file Form 8843 to explain the basis ",
+      "cosine_similarity": 0.693199,
+      "stored_vector_first_8": [
+        -0.0003807,
+        0.0185503,
+        0.0411279,
+        0.0596172,
+        0.0015227,
+        0.0147517,
+        0.0127533,
+        0.0137373
+      ],
+      "stored_vector_l2_norm": 1.0
+    },
+    {
+      "rank": 2,
+      "chunk_id": "316a09f903ff35c6d4f254b001888496d5d6e625f4eee02169d287c30008431c",
+      "source": "irs-f8843.txt",
+      "page": 1,
+      "text": "Form 8843 2025Statement for Exempt Individuals and Individuals With a Medical Condition\nDepartment of the Treasury \nInternal Revenue Service\nFor use by alien individuals only.\nGo to www.irs.gov/Form8843 for the latest information.\nOMB No. 1545-0074\nAttachment \nSequence No. 102\nFor calendar year 2025, or tax year beginning , 2025, and ending , 20 .\nYour first name and initial Last name Your U.S. taxpayer identification number (TIN), if any\nFill in your \naddresses only if \nyou are filing this ",
+      "cosine_similarity": 0.643829,
+      "stored_vector_first_8": [
+        0.0333563,
+        -0.0346686,
+        0.0153659,
+        0.0709241,
+        -0.0055238,
+        -0.0114596,
+        -0.0005045,
+        0.0041047
+      ],
+      "stored_vector_l2_norm": 1.0
+    },
+    {
+      "rank": 3,
+      "chunk_id": "33b1ef160e0c88c16952a9338c907b2782808a7c858e4e7c89260890d83e2771",
+      "source": "irs-f8843.txt",
+      "page": 3,
+      "text": "\nsubstantial presence test. For more details, see Pub. 519. If you \nare present under any other “A” or “G” class visa, you are not \nrequired to file Form 8843.\nSpecific Instructions\nPart I—General Information\nIf you are attaching Form 8843 to Form 1040-NR, you aren’t \nrequired to complete lines 1a through 4a of Form 8843 if you \nprovide the requested information on the corresponding lines of \nForm 1040-NR. See Schedule OI (Form 1040-NR).",
+      "cosine_similarity": 0.635775,
+      "stored_vector_first_8": [
+        0.0079463,
+        0.0466713,
+        0.0351408,
+        0.0543279,
+        -0.007199,
+        0.0229849,
+        0.0274537,
+        0.0118127
+      ],
+      "stored_vector_l2_norm": 1.0
+    },
+    {
+      "rank": 4,
+      "chunk_id": "25491720672f57a6b20a784a9915bc94d73cea0b12b042a6715abe3fc80bc247",
+      "source": "irs-p519.txt",
+      "page": 8,
+      "text": "\nDepartment of the Treasury\nInternal Revenue Service Center\nAustin, TX 73301-0215\nYou must file Form 8843 by the due date for filing Form \n1040-NR. The due date for filing is discussed in chapter 7. \nIf you are required to file Form 8843 and you do not timely \nfile Form 8843, you cannot exclude the days you were \npresent in the United States as a professional athlete or \nbecause of a medical condition that arose while you were \nin the United States. This does not apply if you can show ",
+      "cosine_similarity": 0.63001,
+      "stored_vector_first_8": [
+        -0.0129426,
+        0.0067192,
+        0.0386219,
+        0.0524721,
+        0.0166416,
+        0.0130036,
+        0.0228193,
+        0.0165653
+      ],
+      "stored_vector_l2_norm": 0.9999999
+    }
+  ]
+}

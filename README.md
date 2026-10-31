@@ -1,6 +1,6 @@
 # EE542 Lab9 — Custom Chatbot
 
-主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。主题：**F-1 International Student Assistant**（F-1 身份、CPT/OPT 实习、报税）。**C 的 RAG 和 Part 4 知识库已完成；网站集成、App 和自定义 embedding 待完成。**
+主题问答 Android App：群聊网站 + 自托管 Llama 3 + RAG 知识库 + 自定义直方图 embedding。主题：**F-1 International Student Assistant**（F-1 身份、CPT/OPT 实习、报税）。**C 已提交 RAG 和主题知识库；A 的真实 OpenAI embedding、本地 Llama、网站及 MySQL 已联调，公网 HTTPS 已部署并实测，Android 签名关联及联调待 B 提供资料；B 的 App 和自定义 embedding 仍由 B 完成。** A 的运行范围见 [docs/A-HANDOFF.md](docs/A-HANDOFF.md)，32 题评估及已知问题见 [docs/A-EVALUATION.md](docs/A-EVALUATION.md)，给 B 的交接见 [docs/A-TO-B.md](docs/A-TO-B.md)。
 
 ## 分工
 
@@ -45,7 +45,7 @@
 | C → A、B | 少量样例 `chunks.jsonl` | 开工第一步；A、B 先用它开发 |
 | C → A | 可用的 `retrieve()` | Part 3 跑通后 |
 | C → B | 正式 chunks 和评估问题集 | 主题数据完成后 |
-| A → B | 网站地址 | 先给局域网地址，部署后换 HTTPS |
+| A → B | 网站地址 | https://desktop-jdferfe.taile24d30.ts.net/ |
 | B → A | 包名和签名指纹 | 生成签名后 |
 | A、B → C | 各自剪好的视频片段 | 录完后 |
 
@@ -56,7 +56,7 @@
 - 在仓库根目录执行 `cp -n .env.example .env`，填自己的数据库、JWT secret 和 API key
 - Python 3.12+（`rag/requirements.txt` 锁定的 numpy 2.5.4 需要 3.12+；已在 3.12.13 验证），所有模块从仓库根目录运行；各模块的运行步骤见该目录的 README
 - 公共参数（端口、切块、top-k、路径）只在 `config/project.json` 修改，改它或 `shared/` 前先在群里说
-- `webapp/`、`android/` 和 `rag/reference/` 来自课程模板，不算个人贡献；每人用自己的 Git 身份提交自己的改动
+- `webapp/` 的起点、`android/` 和 `rag/reference/` 来自课程模板；A 对 `webapp/` 的新增修改见 Git diff。每人用自己的 Git 身份提交自己实际负责的改动
 - 不提交 `.env`、签名私钥、模型文件和原始数据
 
 ## C 的进度
