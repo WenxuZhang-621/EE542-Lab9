@@ -1,0 +1,38 @@
+$ python -m custom_embedding.api fit --best
+{
+  "model": "/Users/trent/Downloads/EE542-Lab9/artifacts/custom_embedding/current",
+  "config": "N100-K400-cosine-idf-l2-nostop-soft3-mean1",
+  "documents": 1694,
+  "tokens": 68699,
+  "vocabulary": 2918,
+  "token_coverage": 0.9814,
+  "kmeans_iterations": 10,
+  "kmeans_inertia": 1059.13,
+  "cluster_sizes_min": 1,
+  "cluster_sizes_max": 30
+}
+
+$ python -m custom_embedding.api embed "How many months of OPT can a student get at each degree level?"
+dimension 500 (400 histogram bins + mean vector), non-zero bins 17, bin sum 2.7026
+  bin  165  0.4544  nearest words: point master bachelor higher graduate objectives
+  bin   24  0.4127  nearest words: states-income international-businesses 2015-40 2026-12 92 treaties-a-to-z
+  bin  345  0.4090  nearest words: restricted often accounting scenario along remaining
+  bin  388  0.3943  nearest words: get
+  bin   22  0.3934  nearest words: methods doctorate associate albeit doctoral degrees
+  bin  183  0.3207  nearest words: degreepre-completion recommends recommend pre-completion 24-month opt
+  bin  193  0.1943  nearest words: port-of-entry never insufficient accept displace consulate
+  bin  389  0.0639  nearest words: ideas 267-941-1000 english-speaking cpas defense youtube
+
+$ python - <<EOF   # the chunk the question should retrieve, and its embedding
+question: How many months of OPT can a student get at each degree level?
+relevant chunk: 7e4766dce055 | source: cfr-8-214-2-f.txt | page: None
+text: ull academic term enrolled in a full course of study in the United States prior to studying abroad. A student may be authorized 12 months of practical training, and becomes eligible for another 12 months of practical training when they change to a higher educational level. Students in English language training programs are ineligible for practical training. An eligible student may request employme ...
+embedding: 500 dims = 400 histogram bins + 100 mean-vector dims; 61 non-zero bins
+  bin 124 weight 0.690  words near this centroid: alert opportunities optional curricular practical training
+  bin 397 weight 0.259  words near this centroid: nature allows major area
+  bin  82 weight 0.229  words near this centroid: commitment conferencing difficulty health needing in-person english
+  bin 165 weight 0.222  words near this centroid: point master bachelor higher graduate objectives level
+  bin 348 weight 0.196  words near this centroid: breakdown lesser successful carrying taking government-sponsored limitations
+  bin 345 weight 0.194  words near this centroid: restricted often accounting scenario along remaining called
+retrieval for the question, top 5 chunk ids: ['3f93da6f', 'b6427ae4', '04dc0b17', 'bada442c', 'b7d5cba4'] | relevant found at rank [1, 2]
+EOF
