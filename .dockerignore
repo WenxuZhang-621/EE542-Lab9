@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+.env.*
+!.env.example
+**/__pycache__
+artifacts
+evidence
+android
+custom_embedding
+data/raw
+data/processed
+*.gguf
+*.jks
+*.keystore

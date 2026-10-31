@@ -1,0 +1,18 @@
+{
+  "source_commit": "f3586e66bc916d672773d4a6505513ba91a3595c",
+  "version": "version: 0.8.0-dev (build 1, commit f3586e6)\nbuilt with Clang 23.1.4 for Windows AMD64",
+  "backend": "CPU; locally compiled with llvm-mingw 20261020 / Clang 23.1.4",
+  "answer": "Source build is running.",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 635.536,
+    "prompt_per_token_ms": 14.443999999999999,
+    "prompt_per_second": 69.23289947382996,
+    "predicted_n": 6,
+    "predicted_ms": 473.254,
+    "predicted_per_token_ms": 94.6508,
+    "predicted_per_second": 10.565151060529862
+  },
+  "full_rag_test": false
+}

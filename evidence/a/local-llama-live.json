@@ -1,0 +1,17 @@
+{
+  "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M",
+  "runtime": "llama.cpp b12023 CUDA 13.4 official prebuilt",
+  "reply": "Local model is running.",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 32.23,
+    "prompt_per_token_ms": 0.7324999999999999,
+    "prompt_per_second": 1365.1877133105804,
+    "predicted_n": 6,
+    "predicted_ms": 47.28,
+    "predicted_per_token_ms": 9.456,
+    "predicted_per_second": 105.7529610829103
+  },
+  "full_rag_test": false
+}

@@ -1,0 +1,19 @@
+{
+  "TCP": {
+    "443": {
+      "HTTPS": true
+    }
+  },
+  "Web": {
+    "desktop-jdferfe.taile24d30.ts.net:443": {
+      "Handlers": {
+        "/": {
+          "Proxy": "http://127.0.0.1:8000"
+        }
+      }
+    }
+  },
+  "AllowFunnel": {
+    "desktop-jdferfe.taile24d30.ts.net:443": true
+  }
+}

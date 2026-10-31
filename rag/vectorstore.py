@@ -41,7 +41,7 @@ def load_store(folder: Path):
     for filename, field in [('chunks.jsonl','chunks_sha256'), ('index.faiss','index_sha256')]:
         if hashlib.sha256((folder / filename).read_bytes()).hexdigest() != manifest[field]:
             raise ValueError(f'Corrupt index bundle: {filename}')
-    chunks = [Chunk(**json.loads(line)) for line in (folder / 'chunks.jsonl').read_text().splitlines()]
+    chunks = [Chunk(**json.loads(line)) for line in (folder / 'chunks.jsonl').read_text(encoding='utf-8').splitlines()]
     index = faiss.read_index(str(folder / 'index.faiss'))
     if index.ntotal != len(chunks) or index.ntotal != manifest['count'] or index.d != manifest['dimension']:
         raise ValueError('Index/source mapping dimensions do not match.')
@@ -62,7 +62,7 @@ def build_store(chunks: list[Chunk], folder: Path, model: str) -> dict:
     staging = Path(tempfile.mkdtemp(prefix='.index-building-', dir=folder.parent))
     try:
         faiss.write_index(index, str(staging / 'index.faiss'))
-        (staging / 'chunks.jsonl').write_text(content, encoding='utf-8')
+        (staging / 'chunks.jsonl').write_text(content, encoding='utf-8', newline='\n')
         manifest = {'provider': 'openai', 'model': model, 'dimension': index.d,
                     'count': index.ntotal, 'metric': 'cosine via normalized inner product',
                     'chunks_sha256': digest,

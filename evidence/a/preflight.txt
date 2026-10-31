@@ -1,0 +1,8 @@
+{
+  "index_integrity": true,
+  "jwt_secret": true,
+  "openai_key_configured": true,
+  "mysql_connection": true,
+  "database_connection": true,
+  "llama_reachable": true
+}

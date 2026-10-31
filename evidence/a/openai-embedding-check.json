@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-10-31T22:10:35.014608+00:00",
+  "model": "text-embedding-3-small",
+  "success": true,
+  "dimensions": 1536,
+  "total_tokens": 7
+}

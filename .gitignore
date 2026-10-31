@@ -10,6 +10,7 @@ local.properties
 # Runtime/build output
 .venv/
 __pycache__/
+.pytest_cache/
 *.py[cod]
 .DS_Store
 .gradle/
