@@ -7,6 +7,8 @@
 *.jks
 *.keystore
 local.properties
+android/keystore.properties
+android/keystore/
 # Runtime/build output
 .venv/
 __pycache__/

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- B: replace with A's actual HTTPS website, not the LLM endpoint. -->
-    <string name="defaultUrl">https://example.invalid/</string>
+    <string name="app_name">F-1 Student Desk</string>
+    <!-- A's deployed HTTPS website (the chat site, not the LLM endpoint). -->
+    <string name="defaultUrl">https://desktop-jdferfe.taile24d30.ts.net/</string>
 </resources>

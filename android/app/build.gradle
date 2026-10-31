@@ -3,20 +3,42 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+// Release signing. keystore.properties and the .jks are git-ignored; without
+// them the release build is unsigned (debug builds still work).
+def keystoreProps = new Properties()
+def keystoreFile = rootProject.file('keystore.properties')
+if (keystoreFile.exists()) {
+    keystoreFile.withInputStream { keystoreProps.load(it) }
+}
+
 android {
-    namespace 'com.helloworld.groupchat.twa'
+    namespace 'edu.usc.ee542.f1assistant'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.helloworld.groupchat.twa"
+        applicationId "edu.usc.ee542.f1assistant"
         minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 
+    signingConfigs {
+        release {
+            if (keystoreFile.exists()) {
+                storeFile rootProject.file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (keystoreFile.exists()) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
