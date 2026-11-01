@@ -1,13 +1,13 @@
-# Part 3-II.1 原文入库证据
+# Part 3-II.1 evidence: storing the original text in MySQL
 
-记录时间：2026-10-28T17:33:41.468285-07:00
-基线：6ba2ae8 + 本次未提交源码。配置：独立 Docker MySQL 8.4，127.0.0.1:13306，groupchat。
-输入哈希、来源、页数见 import-first.jsonl；原文件保留，data/raw/part3-demo 为副本。
+Recorded: 2026-10-28T17:33:41.468285-07:00
+Base: 6ba2ae8 plus uncommitted source changes. Setup: a separate Docker MySQL 8.4 at 127.0.0.1:13306, database groupchat.
+Input hashes, sources, and page counts are in import-first.jsonl. The original files were kept; data/raw/part3-demo holds copies.
 
-命令及退出码：
-- python -m rag.ingest --input data/raw/part3-demo：首次和重复均 0，分别见 import-first.jsonl / import-repeat.jsonl。
-- LAB9_TEST_MYSQL=1 python -m unittest discover -s tests -v：0，7 个测试通过，见 tests.txt。
-- PYTHONPATH=. python evidence/c-step2/verify_readback.py：0，全部页原文一致，见 readback.txt。
+Commands and exit codes:
+- python -m rag.ingest --input data/raw/part3-demo: 0 for both the first and the repeated run; see import-first.jsonl / import-repeat.jsonl.
+- LAB9_TEST_MYSQL=1 python -m unittest discover -s tests -v: 0, 7 tests passed; see tests.txt.
+- PYTHONPATH=. python evidence/c-step2/verify_readback.py: 0, the original text of every page matches; see readback.txt.
 
-pdf-warnings.log 保存特殊字体解析警告；尚未确认 Ads cookbook 全文字形准确性。没有用模拟数据库替代 MySQL；没有进行 embedding 或 LLM 调用。
-数据库目前保持运行，Docker named volume 保留数据；只绑定本机端口，无公网部署。
+pdf-warnings.log keeps the parser warnings for special fonts; the glyph accuracy of the full Ads cookbook text has not been confirmed. MySQL was not replaced by a mock database, and no embedding or LLM calls were made.
+At the time of this record the database was left running, with its data kept in a Docker named volume; it was bound only to a local port and not deployed publicly.

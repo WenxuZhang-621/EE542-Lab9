@@ -13,7 +13,7 @@ class ChunkingTests(unittest.TestCase):
         self.assertEqual(parts[0] + parts[1][100:] + parts[2][100:], text)
 
     def test_newlines_preserved_and_empty_ignored(self):
-        text = 'First line\nSecond line\n第三行\n'
+        text = 'First line\nSecond line\nThird line – café\n'
         self.assertEqual(split_page(text, 500, 100, '\n'), [text])
         self.assertEqual(split_page(' \n\t', 500, 100, '\n'), [])
 

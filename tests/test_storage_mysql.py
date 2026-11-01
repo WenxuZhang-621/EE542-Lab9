@@ -25,7 +25,7 @@ class MySQLStorageTests(unittest.TestCase):
         self.engine.dispose()
 
     def test_roundtrip_duplicate_and_new_version(self):
-        original = [DocumentPage(self.source, 1, '中文，RAG 原文'), DocumentPage(self.source, 2, '')]
+        original = [DocumentPage(self.source, 1, 'Café, naïve – RAG source text'), DocumentPage(self.source, 2, '')]
         first = save_document(self.engine, self.source, b'version1', original)
         second = save_document(self.engine, self.source, b'version1', original)
         third = save_document(self.engine, self.source, b'version2', original)

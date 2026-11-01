@@ -1,20 +1,20 @@
-# 第 7 步：带记忆的对话链与 exit 命令行
+# Step 7: conversation chain with memory and the exit command line
 
-2026-10-28 PDT，Wenxu 本机。embedding：text-embedding-3-small；对话：gpt-6-luna（默认 temperature，见 c-step5）；top-k=4。
+2026-10-28 PDT, Wenxu's Mac. Embedding: text-embedding-3-small; chat: gpt-6-luna (default temperature, see c-step5); top-k=4.
 
-| 文件 | 内容 |
+| File | Content |
 |---|---|
-| offline-tests.txt | 全部离线测试 27 个通过（3 个 MySQL 测试默认跳过），DeprecationWarning 视为错误 |
-| cli-transcript.txt | `python -m rag.cli` 真实 5 轮问答，问题由 stdin 输入 |
-| cli-full-pipeline.txt | `python -m rag.cli --input data/raw/part3-lab-only`：PDF 文件夹 → MySQL → 切块 → 建索引 → 问答 → exit |
+| offline-tests.txt | All 27 offline tests pass (the 3 MySQL tests are skipped by default), with DeprecationWarning treated as an error |
+| cli-transcript.txt | 5 real Q&A turns with `python -m rag.cli`, with the questions given on stdin |
+| cli-full-pipeline.txt | `python -m rag.cli --input data/raw/part3-lab-only`: PDF folder → MySQL → chunking → index → Q&A → exit |
 
-cli-transcript 验证：
+What cli-transcript shows:
 
-- 追问 "How should that vector be normalized?" 被改写为完整问题，第 1 名为 p.6 直方图段（0.679），回答"除以 chunk 总词数"。
-- 再追问 "What should we try after building it?" 继续正确指代，回答"尝试不同方法改进"。
-- 无关问题 "What is the capital of France?"：检索分数仅 0.05–0.06，回答 "The documents do not cover…"，没有编造。
-- 中文问题用中文回答（CharacterTextSplitter，500）。
-- 输入 exit 后程序退出（退出码 0），其后的一行没有被提问。
+- The follow-up "How should that vector be normalized?" is rewritten into a complete question; the top result is the histogram passage on p.6 (0.679), and the answer is to divide by the chunk's total word count.
+- The next follow-up, "What should we try after building it?", still resolves the reference correctly; the answer is to try different methods to improve it.
+- For the unrelated question "What is the capital of France?", the retrieval scores are only 0.05–0.06 and the answer is "The documents do not cover…", with nothing made up.
+- A question asked in Chinese is answered in Chinese. The transcript keeps the original text; the question asks which tool Part 3 uses to split the text and how large each chunk is, and the answer is LangChain's `CharacterTextSplitter` with a chunk size of 500.
+- After `exit` the program quits (exit code 0), and the line after it is not asked.
 
-cli-full-pipeline：同一 PDF 已在库中，所以显示 skipped（按来源+内容哈希去重）；26 块重新建在 artifacts/indexes/openai-ef717012a5ba，内容与默认索引相同。
-未做：上传页还没接入入库/建库；Part 4 主题数据未开始；网页端到端和 A 的接入未测。
+cli-full-pipeline: the same PDF was already in the database, so it shows skipped (deduplicated by source and content hash). The 26 chunks were rebuilt in artifacts/indexes/openai-ef717012a5ba, with the same content as the default index.
+Not done yet at this step: the upload page was not yet wired to ingest and indexing, the Part 4 topic data had not been started, and the website end to end and A's integration were not tested.

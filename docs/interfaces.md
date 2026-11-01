@@ -1,10 +1,9 @@
-# 三人交接约定
+# Team handoff contract
 
-- C → A：`rag.api.retrieve(question, k=4) -> list[SearchHit]`，读取仓库里的 `data/topic/index`（Part 4 F-1 学生知识库）。每次调用请求一次 OpenAI embedding，属于同步阻塞调用，FastAPI 里放到线程池执行；服务器 `.env` 需要 OpenAI key。`SearchHit.chunk.source` 是语料文件名，用 `data/topic/catalog.json` 换成标题和网址展示。需要 C 的完整问答时可调 `rag.api.answer(question, session_id)`。网页需显示 `data/topic/sources.json` 里的 notice：资料只作一般信息，不构成法律或税务建议。
-- C → B：知识库正文在 `data/topic/index/chunks.jsonl`（字段见 `shared/contracts.py`，chunk ID 固定）；评估问题在 `data/topic/questions.jsonl`；OpenAI 基线在 `data/topic/baseline_openai.json`。用 `rag.evaluate.score(questions, rankings)` 按同一指标打分，见 `data/topic/README.md`。
-- B：`fit(chunks, n, k)` 学习词向量/质心，`embed(text)` 返回 K 维向量。文档和查询共用已拟合参数，不能每次重新聚类。记录分词、未知词、空文本和归一化分母处理；基线遵循 PDF 的总词数归一化要求，改进方法另记。
+- C → A: `rag.api.retrieve(question, k=4) -> list[SearchHit]` reads `data/topic/index` in the repository (the Part 4 F-1 student knowledge base). Each call makes one OpenAI embedding request and blocks, so FastAPI runs it in a thread pool; the server's `.env` needs an OpenAI key. `SearchHit.chunk.source` is the corpus file name; use `data/topic/catalog.json` to display its title and URL instead. Call `rag.api.answer(question, session_id)` when C's full Q&A is needed. The website must show the notice in `data/topic/sources.json`: the material is general information only and is not legal or tax advice.
+- C → B: the knowledge-base text is in `data/topic/index/chunks.jsonl` (fields in `shared/contracts.py`; chunk IDs are fixed), the evaluation questions are in `data/topic/questions.jsonl`, and the OpenAI baseline is in `data/topic/baseline_openai.json`. Score with the same metrics through `rag.evaluate.score(questions, rankings)`; see `data/topic/README.md`.
+- B: `fit(chunks, n, k)` learns the word vectors and centroids, and `embed(text)` returns a K-dimensional vector. Documents and queries share the fitted parameters; do not re-cluster on every call. Document how tokenization, unknown words, empty text, and the normalization denominator are handled. The baseline follows the PDF's total-word-count normalization; improvements are recorded separately.
 - A: `answer_with_sources` returns `answer`, `sources`, `notice`, `citation_warning`, and `standalone_question`. Sources include their number, chunk ID, filename, page, title, URL, publisher, excerpt, context chunk IDs, and citation status. C's synchronous retrieval runs in a worker thread; memory is isolated by user/session. See `A-HANDOFF.md` for verification status.
-- A -> B: the real public HTTPS website URL.
-- B → A：包名、公开签名指纹、assetlinks 内容。私钥不共享到仓库。
-- `data/examples` 只有虚构接口样例，不是正式知识库、检索结果或实验证据。
-- C 的上传页面只实现一套，A 不重复开发。A 修改 Web，B 修改 Android/自定义 embedding，C 修改 RAG；共享结构变更先协调。知识库更新后 chunk ID 会变，C 重新生成 `questions.jsonl` 和基线并通知 A/B。
+- A → B: the real public HTTPS website URL.
+- B → A: the package name, the public signing fingerprint, and the assetlinks content. The private key is not shared through the repository.
+- C builds the only upload page; A does not build another. A changes the web app, B changes Android and the custom embedding, and C changes RAG; changes to shared structures are coordinated first. Chunk IDs change when the knowledge base is updated, so C then regenerates `questions.jsonl` and the baseline and tells A and B.

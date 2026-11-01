@@ -6,8 +6,8 @@ from rag.documents import extract_pages, MAX_BYTES
 
 class ExtractionTests(unittest.TestCase):
     def test_utf8_text_and_source(self):
-        page = extract_pages('../notes.md', '中文 RAG'.encode())[0]
-        self.assertEqual((page.source, page.page, page.text), ('notes.md', None, '中文 RAG'))
+        page = extract_pages('../notes.md', 'café – RAG ✓'.encode())[0]
+        self.assertEqual((page.source, page.page, page.text), ('notes.md', None, 'café – RAG ✓'))
 
     def test_blank_pdf_preserves_page(self):
         writer = PdfWriter()

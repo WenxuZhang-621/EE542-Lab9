@@ -60,7 +60,7 @@ def test_two_authenticated_sockets_and_sources_survive_reload(client, monkeypatc
     with c.websocket_connect('/ws') as wa, c.websocket_connect('/ws') as wb:
         wa.send_json({'token':a['token']}); wb.send_json({'token':b['token']})
         assert wa.receive_json()['type'] == wb.receive_json()['type'] == 'ready'
-        response = c.post('/api/messages', headers=headers(a), json=body('CPT？', False))
+        response = c.post('/api/messages', headers=headers(a), json=body('CPT\uff1f', False))
         assert response.status_code == 200
         events_a, events_b = [wa.receive_json() for _ in range(4)], [wb.receive_json() for _ in range(4)]
         assert events_a == events_b

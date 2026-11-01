@@ -1,55 +1,55 @@
-# B：Android TWA（Part 2，Part 4 App 端）
+# B: Android TWA (Part 2, Part 4 app)
 
-本目录来自课程的 Trusted Web Activity 模板。App 本身没有页面：`LauncherActivity`（android-browser-helper）用 Chrome 以全屏、无地址栏的方式打开 A 的网站，登录、群聊和主题问答都在网页里完成。
+This folder comes from the course's Trusted Web Activity template. The app has no screens of its own: `LauncherActivity` (android-browser-helper) opens A's website in Chrome, full screen and without an address bar, and login, group chat, and topic Q&A all happen on the website.
 
-## 已配置
+## Configuration
 
-| 项 | 值 | 文件 |
+| Item | Value | File |
 |---|---|---|
-| 包名 / applicationId | `edu.usc.ee542.f1assistant` | `app/build.gradle` |
-| App 名称 | F-1 Student Desk | `app/src/main/res/values/strings.xml` |
-| 打开的网址 | `https://desktop-jdferfe.taile24d30.ts.net/`（A 的网站） | `strings.xml` 的 `defaultUrl` |
-| 签名 | release 用 `keystore/f1assistant-release.jks`，参数在 `keystore.properties`（两者都不提交） | `app/build.gradle` 的 `signingConfigs` |
-| Gradle | wrapper 8.13（模板缺的 `gradle-wrapper.jar` 用本机 Gradle 生成后加入），AGP 8.13.0，JDK 17 | `gradle/wrapper/` |
+| Package name / applicationId | `edu.usc.ee542.f1assistant` | `app/build.gradle` |
+| App name | F-1 Student Desk | `app/src/main/res/values/strings.xml` |
+| URL it opens | `https://desktop-jdferfe.taile24d30.ts.net/` (A's website) | `defaultUrl` in `strings.xml` |
+| Signing | Release builds use `keystore/f1assistant-release.jks`, with settings in `keystore.properties` (neither is committed) | `signingConfigs` in `app/build.gradle` |
+| Gradle | Wrapper 8.13 (the template lacked `gradle-wrapper.jar`, so it was generated with a local Gradle and added), AGP 8.13.0, JDK 17 | `gradle/wrapper/` |
 
-签名证书的 SHA-256 指纹：
+SHA-256 fingerprint of the signing certificate:
 
 ```
 40:C7:CF:68:1A:2E:C4:25:14:6E:20:A3:27:40:E4:3C:E7:BD:41:AB:AF:E5:6F:EA:FF:6D:5D:8B:01:4E:FE:96
 ```
 
-给 A 的 `assetlinks.json` 在 `evidence/b-part2/assetlinks.json`，要放到网站的 `/.well-known/assetlinks.json`。包名和指纹必须和上面一致，否则 Chrome 不信任这个 App，会退回带地址栏的 Custom Tab。
+The `assetlinks.json` for A is `evidence/b-part2/assetlinks.json`; it goes on the website at `/.well-known/assetlinks.json`. The package name and fingerprint must match the values above; otherwise Chrome does not trust the app and falls back to a Custom Tab with an address bar.
 
-## 构建
+## Build
 
-需要 JDK 17 和 Android SDK（platform 34、build-tools 34.0.0）。在 `local.properties` 写 `sdk.dir=<SDK 路径>`（不提交）。
+Requires JDK 17 and the Android SDK (platform 34, build-tools 34.0.0). Put `sdk.dir=<SDK path>` in `local.properties` (not committed).
 
 ```sh
 cd android
-./gradlew assembleDebug          # 调试包（调试签名），可直接装模拟器
-./gradlew assembleRelease        # 有 keystore.properties 时输出正式签名的 release 包
-# 输出：app/build/outputs/apk/{debug,release}/
+./gradlew assembleDebug          # debug build (debug signing), can be installed on an emulator directly
+./gradlew assembleRelease        # with keystore.properties, builds a release APK signed with the release key
+# output: app/build/outputs/apk/{debug,release}/
 ```
 
-没有 `keystore.properties` 时 release 构建不签名，调试构建不受影响。验证签名：
+Without `keystore.properties` the release build is unsigned; debug builds are not affected. To verify the signature:
 
 ```sh
 $ANDROID_HOME/build-tools/34.0.0/apksigner verify --print-certs app/build/outputs/apk/release/app-release.apk
 ```
 
-## 安装和验证
+## Install and verify
 
 ```sh
 adb install -r app/build/outputs/apk/release/app-release.apk
 ```
 
-验证顺序：
-1. A 部署 `assetlinks.json` 后，`curl https://desktop-jdferfe.taile24d30.ts.net/.well-known/assetlinks.json` 应返回上面的内容。
-2. 安装 **签名的 release 包**（指纹必须匹配；debug 包用的是另一把密钥，会显示地址栏）。
-3. 打开 App：无地址栏、直接显示网站；注册/登录；发一条带 `?` 的主题问题，收到带来源的回答。
+Verification order:
+1. After A deploys `assetlinks.json`, `curl https://desktop-jdferfe.taile24d30.ts.net/.well-known/assetlinks.json` should return the content above.
+2. Install the **signed release build** (the fingerprint must match; the debug build uses a different key and shows an address bar).
+3. Open the app: there is no address bar and the website appears directly. Register or log in, send a topic question containing `?`, and receive an answer with sources.
 
-模板、`.gradle`、`.idea`、`build`、`local.properties`、密钥不提交；APK 放本地或 `artifacts/`。
+The template download, `.gradle`, `.idea`, `build`, `local.properties`, and keys are not committed; keep APKs locally or in `artifacts/`.
 
-## 为什么是 TWA
+## Why a TWA
 
-TWA 用系统的 Chrome 渲染网页，App 只是一层壳：网站改了 App 不用重新发版，Chrome 的登录态和 Cookie 直接复用。代价是必须 HTTPS，并且网站要发布 `assetlinks.json` 证明"这个网站授权这个包名 + 这把签名"来打开它，否则 Chrome 退回带地址栏的 Custom Tab。
+A TWA renders the website with the system's Chrome, so the app is only a shell: website changes need no new app release, and Chrome's login state and cookies are reused. The cost is that HTTPS is required, and the website must publish `assetlinks.json` to prove that "this website authorizes this package name with this signing key" to open it; otherwise Chrome falls back to a Custom Tab with an address bar.

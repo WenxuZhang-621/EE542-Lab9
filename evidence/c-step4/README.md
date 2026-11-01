@@ -1,6 +1,6 @@
-# 第 4 步离线验证
+# Step 4 offline verification
 
-2026-10-28：仅离线测试，退出码 0。命令：python -m unittest discover -s tests -p test_vectorstore.py -v。
-使用 mock API 返回值和小型合成向量，未调用 OpenAI；测试目录自动清理，未发布正式索引。
-覆盖响应顺序/分批、错误响应索引、归一化余弦排序、保存重载和映射、重复构建、模型变更拒绝、损坏检测、API 失败不发布、零向量拒绝。
-真实 key/模型配置与语义检索质量待验证。SDK 与库版本见 rag/requirements.txt。
+2026-10-28: offline tests only, exit code 0. Command: python -m unittest discover -s tests -p test_vectorstore.py -v.
+The tests use mocked API responses and small synthetic vectors and do not call OpenAI. The test folder is cleaned up automatically, and no final index was published.
+Covered: response order and batching, indexes in error responses, normalized cosine ranking, save/reload and the chunk mapping, repeated builds, rejection of a changed model, corruption detection, no publish when the API fails, and rejection of zero vectors.
+Still to be verified after this step: the real key and model configuration, and semantic retrieval quality. SDK and library versions are in rag/requirements.txt.

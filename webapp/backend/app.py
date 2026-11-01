@@ -286,7 +286,7 @@ async def post_message(data: NewMessage, user: User = Depends(current_user)):
     content = data.content.strip()
     if not content:
         raise HTTPException(400, 'Message cannot be blank')
-    ask_bot = data.ask_bot or '?' in content or '？' in content
+    ask_bot = data.ask_bot or '?' in content or '\uff1f' in content  # also the full-width question mark
     with public_access.message(user.id, ask_bot):
         saved = await save_message(content, user.id, False, user.username, ask_bot=ask_bot)
         await manager.broadcast({'type': 'message', 'message': saved})

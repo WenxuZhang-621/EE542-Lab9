@@ -1,11 +1,11 @@
-# 第 10 步：上传页接入与测试
+# Step 10: upload page integration and tests
 
-2026-10-28 PDT。
+2026-10-28 PDT.
 
-| 文件 | 内容 |
+| File | Content |
 |---|---|
-| process-uploads.txt | `process_uploads()` 真实运行：2 个网页 + 实验 PDF 存入 MySQL（已存在则 skipped），.docx 显示为失败行；38 块建索引后问 ITIN，回答 Form W-7，来源均为 sits-itin.html |
-| browser-processed.jpg、browser-answer.jpg | 浏览器 127.0.0.1:8501：通过页面的文件输入框提交一个 Markdown 测试文件（用脚本把文件放进 input，等同选择文件），点 Process documents 后显示入库、1 块、1536 维索引；提问后得到正确答案和来源 |
-| tests.txt | `LAB9_TEST_MYSQL=1 python -m unittest discover -s tests -v`：39 个测试全部通过（含 3 个 MySQL 测试、3 个 Streamlit AppTest） |
+| process-uploads.txt | Real run of `process_uploads()`: 2 web pages and the lab PDF stored in MySQL (skipped if already present), and a .docx shown as a failed row. After 38 chunks were indexed, a question about the ITIN was answered with Form W-7, with all sources from sits-itin.html |
+| browser-processed.jpg, browser-answer.jpg | Browser at 127.0.0.1:8501: a Markdown test file was submitted through the page's file input (a script put the file into the input, which is equivalent to choosing it). After Process documents was clicked, the page showed the stored document, 1 chunk, and a 1536-dimension index; a question then got the correct answer with sources |
+| tests.txt | `LAB9_TEST_MYSQL=1 python -m unittest discover -s tests -v`: all 39 tests pass (including 3 MySQL tests and 3 Streamlit AppTests) |
 
-浏览器测试留下了一条测试文档 browser-upload-test.md（MySQL）和 artifacts/indexes/upload-* 索引，均不进 Git。
+The browser test left a test document, browser-upload-test.md, in MySQL and artifacts/indexes/upload-* indexes on disk; neither is in Git.

@@ -1,14 +1,14 @@
-# 第 6 步：真实 OpenAI 向量库与 retrieve()
+# Step 6: real OpenAI vector store and retrieve()
 
-2026-10-28 PDT，Wenxu 本机。输入：data/processed/chunks.jsonl（实验要求 PDF，6 页 → 26 块，output_sha256 3eb28f90…）。
+2026-10-28 PDT, Wenxu's Mac. Input: data/processed/chunks.jsonl (the lab handout PDF, 6 pages → 26 chunks, output_sha256 3eb28f90…).
 
-| 文件 | 内容 |
+| File | Content |
 |---|---|
-| build-index.txt | `python -m rag.vectorstore` 首次建库：created，text-embedding-3-small，1536 维，26 个向量，2835 tokens |
-| rebuild-reuse.txt | 再次运行：unchanged，没有重新调用 API |
-| reload-check.txt | load_store 重载：26 向量 / 1536 维 / 26 chunks，哈希校验通过 |
-| retrieve-samples.txt | `rag.api.retrieve()` 真实查询 3 个问题，top-4 分数（余弦）、页码和 chunk ID |
-| retrieve_samples.py | 生成上面记录的脚本 |
+| build-index.txt | First build with `python -m rag.vectorstore`: created, text-embedding-3-small, 1536 dimensions, 26 vectors, 2835 tokens |
+| rebuild-reuse.txt | Second run: unchanged, no new API calls |
+| reload-check.txt | Reload with load_store: 26 vectors / 1536 dimensions / 26 chunks, hash check passed |
+| retrieve-samples.txt | Real `rag.api.retrieve()` queries for 3 questions: top-4 scores (cosine), pages, and chunk IDs |
+| retrieve_samples.py | Script that produced the record above |
 
-3 个问题的第 1 名都是对应原文：chunk 大小 → p.4 CharacterTextSplitter 段（0.478）；直方图归一化 → p.6 Part 5 段（0.626）；视频要求 → p.6 Deliverables 段（0.501）。
-索引位于 artifacts/indexes/openai（Git 忽略）。只是 Part 3 流程样例，不是 Part 4 主题知识库。
+For all 3 questions the top result is the matching passage: chunk size → the CharacterTextSplitter passage on p.4 (0.478); histogram normalization → the Part 5 passage on p.6 (0.626); video requirements → the Deliverables passage on p.6 (0.501).
+The index is in artifacts/indexes/openai (ignored by Git). This is only a sample run of the Part 3 pipeline, not the Part 4 topic knowledge base.

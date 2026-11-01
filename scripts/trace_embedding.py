@@ -1,4 +1,4 @@
-"""Show a real query embedding and stored vector for the video demonstration.
+"""Show a real query embedding and stored vector.
 
 Makes one OpenAI embedding request. Outputs only a short vector sample, never
 credentials. Vector coordinates are learned features, not labeled word counts.

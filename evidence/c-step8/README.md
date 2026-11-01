@@ -1,20 +1,20 @@
-# 第 8 步：Part 4 主题资料与知识库
+# Step 8: Part 4 topic data and knowledge base
 
-2026-10-28 PDT，Wenxu 本机。主题：F-1 International Student Assistant（身份、CPT/OPT、报税）。
+2026-10-28 PDT, Wenxu's Mac. Topic: F-1 International Student Assistant (status, CPT/OPT, taxes).
 
-| 文件 | 内容 |
+| File | Content |
 |---|---|
-| build-kb.txt | `rag.cli --input data/raw/topic/corpus --index data/topic/index --build-only`：17 份文档入库，1694 块（21–500 字符），text-embedding-3-small 1536 维，163,063 tokens |
-| cli-topic.txt | `rag.cli --index data/topic/index` 真实 6 轮问答 |
+| build-kb.txt | `rag.cli --input data/raw/topic/corpus --index data/topic/index --build-only`: 17 documents stored, 1694 chunks (21–500 characters), text-embedding-3-small with 1536 dimensions, 163,063 tokens |
+| cli-topic.txt | 6 real Q&A turns with `rag.cli --index data/topic/index` |
 
-资料清单、哈希和整理规则见 data/topic/README.md 与 sources.lock.json。
+The source list, hashes, and cleanup rules are in data/topic/README.md and sources.lock.json.
 
-处理过程中的修正：
-- govinfo 没有 2026 版 Title 8，下载返回"Page Not Found"网页；加了文件签名检查，改用 eCFR 截至 2026-09-30 的现行 8 CFR 214.2，并只保留 (f)。
-- IRS PDF 每页有印刷校样页眉，另有约 2000 处断行连字符和 "Y ou"、"W -4" 一类拆词；整理成按页分隔的干净文本后重建了索引（前两次建出的索引已删除）。
+Fixes made during processing:
+- govinfo has no 2026 edition of Title 8, and the download returned a "Page Not Found" web page. A file-signature check was added, and the current 8 CFR 214.2 from eCFR as of 2026-09-30 is used instead, keeping only paragraph (f).
+- Every page of the IRS PDFs has a printer's-proof header, and there were about 2000 end-of-line hyphenations and split words such as "Y ou" and "W -4". The PDFs were cleaned into page-separated text and the index was rebuilt (the indexes from the first two builds were deleted).
 
-cli-topic 结果：
-- OPT 失业上限 90 天；追问 "And with the STEM extension?" 被改写后答 150 天（总 OPT 期间）。
-- "毕业后能留多久"：回答以法规为准是 30 天，并指出另一来源写 60 天与法规冲突。
-- 中文问题用中文回答（校内每周 20 小时）；无关问题（披萨）回答文档未覆盖。
-- 不足："没有收入要不要交 Form 8843"，前 4 个检索结果未命中对应段落，回答文档未覆盖。
+Results in cli-topic:
+- The OPT unemployment limit is 90 days; the follow-up "And with the STEM extension?" is rewritten and answered with 150 days (over the whole OPT period).
+- "How long can I stay in the U.S. after I finish my program?": the answer follows the regulation (30 days) and points out that another source says 60 days, which conflicts with the regulation.
+- A question asked in Chinese is answered in Chinese. The transcript keeps the original text; the question asks how many hours per week an F-1 student may work on campus, and the answer is 20 hours per week while school is in session. An unrelated question (pizza) is answered as not covered by the documents.
+- Gap: for "Do I need to file Form 8843 if I had no income?", the top 4 results miss the relevant passage, and the answer says the documents do not cover it.
