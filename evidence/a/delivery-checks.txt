@@ -1,0 +1,19 @@
+Part A delivery verification - October 31, 2026 (America/Los_Angeles)
+Repository base: b55075f6c43e70e8b1463d1ac3d58e8af1c86f7e
+
+Focused regression command:
+python -m pytest tests/test_webapp.py tests/test_web_rag.py tests/test_public_access.py tests/test_assetlinks.py -q -p no:cacheprovider
+Result: 27 passed in 1.45s
+
+JavaScript syntax:
+node --check webapp/frontend/app.js
+Result: exit 0
+
+Read-only environment check:
+python -m scripts.check_setup
+Result: index_integrity, jwt_secret, openai_key_configured,
+mysql_connection, database_connection, and llama_reachable all true.
+This preflight does not make an embedding request or verify API credits.
+
+The historical 66-test result in tests.txt includes C's existing tests.
+It is preserved as earlier evidence and is not relabeled as this focused run.

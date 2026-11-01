@@ -1,64 +1,49 @@
-# A：网站与系统集成交接
+# A: Website and system integration handoff
 
-本次实现基于 `9e1a0df4e7e9a25c36b086842b11e54e73d1bcf2`。范围为 A（Part 1 + Part 4 网站端），B 的 Android 和自定义 embedding 交由另一位组员完成。
+This implementation started from `9e1a0df4e7e9a25c36b086842b11e54e73d1bcf2`. Its scope is A: Part 1 and the Part 4 website. Another team member handles B's Android app and custom embeddings.
 
-## 已实现
+## Implemented
 
-- 注册/登录、带认证的 WebSocket 群聊、普通消息与助手提问切换；中文/英文问号均可触发助手。
-- `ask_llm()` → `answer_with_sources()` → 在线程中调用 C 的 `rag.api.retrieve()` → 自托管 Llama 的 OpenAI-compatible `/v1/chat/completions`。
-- A 的上下文组装保留 C 的 500 字符索引和检索接口，补充命中片段前后各一个同文档、同页片段，避免关键句被截断。问题明确指定表格和类别时，最多一半来源优先使用该表格中类别一致的 Part 标题（例如 Students），其余保留向量检索排序。每个来源保存原始命中 ID 和 `context_chunk_ids`。
-- 追问先用 Llama 改写为独立问题；记忆按用户 ID + 浏览器会话 UUID 隔离，最多保留 3 轮、256 个会话，闲置一小时后清理。历史聊天在 MySQL，模型记忆仅在当前进程，重启会清空。
-- 提示模型只按检索上下文回答、标注 `[1]` 等编号、说明资料冲突；无支持资料时不猜测。检查引用编号是否存在。模型有合法引用不等于事实必然正确，录制时仍需人工对照原文。
-- 来源标题、机构、链接、页码、chunk ID 和原文随回答写入 `message_details`，刷新后仍能查看。保留原始 `users/messages` 表，无需删除旧数据。
-- 网页加载状态、断线重连、失败消息和原问题重试；退出登录后关闭 WebSocket。
-- 手机页面、PWA manifest/图标、仅缓存公开静态文件的 service worker；`/.well-known/assetlinks.json` 路由及与 B 对接的生成/检查工具。
-- MySQL + FastAPI + 可选 Llama + 可选 Caddy HTTPS 的 Docker Compose；Windows 本地启动脚本；环境检查脚本和 CI 配置。
+- Registration/login, authenticated WebSocket group chat, and ordinary-message/assistant-question selection. Both ASCII and full-width question marks can trigger the assistant.
+- `ask_llm()` → `answer_with_sources()` → C's `rag.api.retrieve()` in a worker thread → the self-hosted Llama OpenAI-compatible `/v1/chat/completions` endpoint.
+- Context assembly preserves C's 500-character index and retrieval interface, adding up to one neighboring chunk on each side from the same document and page to avoid truncated sentences. For questions naming a specific form and category, at most half the sources prioritize matching Part headings such as Students; the remaining sources retain vector ranking. Every source preserves its original hit ID and `context_chunk_ids`.
+- Llama rewrites follow-ups as standalone questions. Memory is keyed by user ID plus browser-session UUID, retains up to three turns across at most 256 sessions, and expires after one idle hour. MySQL stores shared chat history; model memory exists only in the current process and resets on restart.
+- The prompt requests answers supported by retrieved context, numbered citations such as `[1]`, and disclosure of conflicting sources. It requests no guessing when evidence is missing. Citation numbers are checked against available sources, but valid citations do not guarantee factual correctness; compare answers with the original text during evaluation.
+- Source titles, publishers, URLs, pages, chunk IDs, and excerpts are stored with answers in `message_details` and remain available after refresh. Existing `users/messages` tables and records are preserved.
+- Loading indicators, reconnection, failure messages, and retrying the original question. Logging out closes the WebSocket.
+- Mobile layout, PWA manifest/icons, a service worker caching only public static files, and the `/.well-known/assetlinks.json` route with generation/validation tools for B.
+- Docker Compose for MySQL/FastAPI with optional Llama and Caddy HTTPS, Windows launch scripts, environment checks, and CI.
 
-## 实际验证范围
+## Actual verification scope
 
-本机运行了 MySQL Community Server 8.4.13 和 FastAPI，浏览器验证了注册、登录、发消息、失败提示和 390 像素手机布局。测试记录见 `evidence/a/`。
+MySQL Community Server 8.4.13 and FastAPI ran locally. Browser checks covered registration, login, messaging, failures, and a 390-pixel mobile layout. Evidence is under `evidence/a/`.
 
-自动化测试共 66 项通过，另有 5 个子测试，包含真实 MySQL 存储和受控检索/模型替身的接入、广播、记忆隔离及错误处理测试。早期 `source-card-fixture.png` 来自明确写有 **UI TEST FIXTURE** 的隔离测试服务；新增 `live-web-answer.png` 和 `live-web-smoke.json` 才是实际服务的问答证据。
+The test suite passed 66 tests and five subtests, including real MySQL storage and controlled retrieval/model substitutes for integration, broadcasting, memory isolation, and error handling. The earlier `source-card-fixture.png` came from an isolated service explicitly labeled **UI TEST FIXTURE**. `live-web-answer.png` and `live-web-smoke.json` record actual service answers.
 
-2026-10-31 已在本机启动 llama.cpp b12023 官方 Windows CUDA 13.4 预编译版本，加载 Meta-Llama-3.1-8B-Instruct-Q4_K_M（约 4.92 GB），并在 RTX 5070 Ti 上验证真实生成回复。模型与运行文件的 SHA-256 均按发布方元数据校验。模型端点绑定 127.0.0.1:8001，使用随机本地密钥，网页端口为 8000；本机 MySQL 端口为 13409。
+On 2026-10-31, the official prebuilt llama.cpp b12023 Windows CUDA 13.4 server loaded Meta-Llama-3.1-8B-Instruct-Q4_K_M, approximately 4.92 GB, and generated real responses on an RTX 5070 Ti. Model and runtime SHA-256 hashes were checked against publisher metadata. The model binds to 127.0.0.1:8001 with a random local authentication key; the website uses port 8000 and local MySQL uses 13409.
 
-同日还完成了讲义中的源码构建：检出 llama.cpp b12023 / `f3586e66bc916d672773d4a6505513ba91a3595c`，用 LLVM-MinGW Clang 23.1.4、CMake 4.4.4 和 Ninja 1.13.2 编译 CPU 版 `llama-server`。在独立的本机 8011 端口加载同一个 8B 模型并得到真实回复，随后停止该验证进程。网站继续使用 8001 上的 GPU 版本；这两项证据分别记录，不能把 CPU 源码构建称为 CUDA 源码构建。复现脚本为 `scripts/build_llama_cpu.ps1`。
+The source-build requirement was also verified that day: llama.cpp b12023 / `f3586e66bc916d672773d4a6505513ba91a3595c` was compiled as a CPU `llama-server` using LLVM-MinGW Clang 23.1.4, CMake 4.4.4, and Ninja 1.13.2. It loaded the same 8B model on local port 8011 and produced a real response, then was stopped. The website continues using the GPU server on 8001. These are separate results: the CPU source build must not be described as a CUDA source build. Reproduction script: `scripts/build_llama_cpu.ps1`.
 
-2026-10-31 已通过官方连接器创建用户确认的 key（Personal / Default project，有效期 30 天），仅保存到本机忽略的 `.env`。账户额度恢复后，真实 `text-embedding-3-small` 请求成功返回 1536 维向量；`scripts.check_setup --live` 和 `scripts.smoke_web_live` 均通过。完整链路为真实 OpenAI 查询向量 → C 的 FAISS 检索 → A 的上下文组装 → 本地 Llama 3.1 8B → HTTP/WebSocket → MySQL。两轮问题为 Form 8843 的用途，以及“that form”要求学生提供的信息；已核对表格主题、学生部分、引用、加载/完成广播和来源回读。网页刷新后仍可展开原文。
+On 2026-10-31, with an authorized OpenAI key stored in the ignored local `.env` and sufficient API credits, a real `text-embedding-3-small` request returned 1,536 dimensions. Both `scripts.check_setup --live` and `scripts.smoke_web_live` passed. The full chain was real OpenAI query embedding → C's FAISS retrieval → A's context assembly → local Llama 3.1 8B → HTTP/WebSocket → MySQL. The two questions covered the purpose of Form 8843 and what information “that form” requests from students. Checks covered the form/topic, Students section, citations, loading/done broadcasts, and persisted sources. Excerpts remained available after browser refresh.
 
-实测曾发现 500 字符片段截断、JSON 格式历史导致追问语言/主题偏移，以及教师段落挤掉学生段落的问题。对应修复为相邻上下文、使用原生对话角色且只替换指代的追问提示、明确表格与类别的章节匹配；相关回归测试已加入。小模型回答仍需人工对照原文，两轮演示通过不代表整个知识库的事实正确率已验证。现已扩展到 32 题真实评估，32/32 返回有引用的答案，30/32 覆盖标注原文，但人工检查仍发现生成和资料冲突问题，详见 `A-EVALUATION.md`。网站仍保留额度耗尽时的明确提示和重试入口。
+Testing exposed truncated 500-character passages, follow-up language/topic drift caused by JSON-formatted history, and teacher sections displacing student sections. Fixes included neighboring context, native conversation roles with minimal reference-only rewriting, and explicit form/category section matching; regression tests cover these cases. Small-model answers still need human comparison with the source. Two successful demo questions do not establish knowledge-base-wide factual accuracy. A subsequent 32-question evaluation returned cited answers for 32/32 questions and covered annotated source text for 30/32, but human review found generation errors and unacknowledged source conflicts. See `A-EVALUATION.md`. The website retains an explicit insufficient-credit message and retry control.
 
-公网 HTTPS 已在 https://desktop-jdferfe.taile24d30.ts.net/ 部署并实测，详见 `A-PUBLIC-DEPLOYMENT.md`；签名 APK 待 B 提供。最终 TWA 域名关联需要 B 的包名和证书指纹。交付代码包不含 `.env`、数据库、模型或任何真实 key，组员须使用各自获授权的本地配置。
+Public HTTPS is deployed and tested at https://desktop-jdferfe.taile24d30.ts.net/; see `A-PUBLIC-DEPLOYMENT.md`. B has committed a signed release build record, package name, and certificate fingerprint. A has deployed matching Asset Links and verified the public HTTPS response. Final TWA behavior still needs validation on the installed signed APK. The source package excludes `.env`, databases, models, and real keys; teammates must use their own authorized local configuration.
 
-## 给 C 的兼容性说明
+## Compatibility with C's work
 
-C 的检索函数签名、语料和 FAISS 索引内容不变。只对 `rag/vectorstore.py` 做两个 Windows 修复：读 chunks 明确 UTF-8；写 chunks 固定 LF，确保实际文件字节与 SHA-256 一致。新增 `.gitattributes` 防止 Git 把已校验的 JSONL 改成 CRLF。若旧工作目录仍有 CRLF，先保存本地改动，再从当前分支重新检出该文件；不要随意更改 manifest 来绕过校验。
+A's original integration preserved C's retrieval signature, corpus, and FAISS index contents. It made two Windows fixes in `rag/vectorstore.py`: explicitly read chunks as UTF-8 and write them with LF so file bytes match SHA-256 checksums. `.gitattributes` prevents Git from converting verified JSONL to CRLF. If an old checkout still has CRLF, save local changes before checking out the current file again; do not bypass validation by arbitrarily changing the manifest. The current A documentation cleanup does not modify C's source data, index, or baseline.
 
-## 给 B 的接口
+## Interface for B
 
-1. 开发阶段可以用网站所在电脑的局域网地址测试浏览器页面；Android 模拟器访问宿主机一般用 `http://10.0.2.2:8000`，真机使用电脑的 LAN 地址。服务需绑定 `0.0.0.0`，网络和防火墙需允许访问。
-2. 正式 TWA 的 `defaultUrl` 必须是最终 **HTTPS 网站地址**，不是 8001 模型端口。HTTP 本地访问不等于通过 TWA 域名验证。
-3. B 提供实际 `applicationId` 和安装 APK 所用证书的 SHA-256 指纹；指纹是公开值，私钥留在 B 的电脑。
-4. A 执行 `python -m scripts.assetlinks --package 实际包名 --fingerprint 实际指纹`，部署生成的 JSON。
-5. A 执行 `python -m scripts.assetlinks --package 实际包名 --fingerprint 实际指纹 --check-url https://实际域名`。B 重新安装签名 APK，检查登录、提问、来源外链及无地址栏启动。
+1. During development, test the browser page through the website computer's LAN address. An Android emulator typically reaches its own host at `http://10.0.2.2:8000`; a physical phone uses the computer's LAN address. LAN access requires binding to `0.0.0.0` and suitable network/firewall rules.
+2. A production TWA `defaultUrl` must be the final **HTTPS website URL**, not the model endpoint on port 8001. Local HTTP access does not establish TWA domain verification.
+3. B supplies the actual `applicationId` and SHA-256 fingerprint of the certificate used to sign the installed APK. The fingerprint is public; B retains the private key.
+4. A runs `python -m scripts.assetlinks --package ACTUAL_PACKAGE_NAME --fingerprint ACTUAL_SHA256_FINGERPRINT` and deploys the generated JSON.
+5. A runs `python -m scripts.assetlinks --package ACTUAL_PACKAGE_NAME --fingerprint ACTUAL_SHA256_FINGERPRINT --check-url https://YOUR_DOMAIN`. B reinstalls the signed APK and checks login, questions, source links, and launch without an address bar.
 
-当前仓库保留模板 assetlinks 的占位值，不能声称已完成域名关联。不要擅自填写与 B 不一致的包名或指纹。
+B has supplied applicationId `edu.usc.ee542.f1assistant` and its release certificate fingerprint. The deployed Asset Links JSON matches them; device-level TWA verification remains pending. See `evidence/a/android-association.json` and B's build record in `evidence/b-part2/README.md`.
 
-## 录制 A 的视频时需要讲解
+## Integration workflow
 
-| 展示 | 讲解要点 |
-|---|---|
-| 两个浏览器登录并互发消息 | MySQL 保存消息；认证后的 WebSocket 同步广播；普通消息不调用模型 |
-| 提问并展开来源 | `ask_llm()` 如何调用 C 的检索；为何使用后台线程；上下文如何加入 Llama 请求 |
-| 显示原文与回答引用 | 来源的 chunk ID、页码、网址如何映射；刷新后仍存在 |
-| 连续追问，再换用户提问 | 同一会话保留上下文，不同用户隔离；群聊消息本身是全组可见的 |
-| 暂停模型服务，再恢复并重试 | 加载/失败状态与原问题重试；不要把服务错误包装成知识答案 |
-| 手机浏览器、与 B 联调 | 布局、HTTPS、Asset Links；最终 TWA 验证由 A/B 一起完成 |
-
-上述是演示提纲，不是虚构的个人工作日志。按老师要求，用手机拍摄你本人实际工作、问题和修复过程。完成真实联调后再录最终问答视频。
-
-## 合并与提交
-
-A 的改动通过独立分支和 Pull Request 交接，合并前检查与 B、C 最新工作的兼容性。使用离线代码包时，先对 `part-a.patch` 执行 `git apply --check`。贡献日志应对应成员实际负责和检查的工作。
-
-可按实际工作分成后端接入、前端交互、部署与测试几个清晰提交。老师要求最终 PDF 带 YouTube 链接和 GitHub 日志，真实视频和提交链接确定后再填写；此时没有伪造最终提交材料。
+Use a branch and pull request to coordinate changes with B and C. Check compatibility with their latest work before merging. The shared repository is the source of truth; preserve teammates' local changes when updating a checkout. Commit messages and contribution logs should identify each member's actual implementation and verification work.

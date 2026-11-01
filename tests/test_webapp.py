@@ -116,7 +116,7 @@ def test_public_signup_invitation_and_login_throttling(client, monkeypatch):
     credentials = {'username':'invite-user', 'password':'test-password-123'}
     assert c.get('/api/config').json()['registration_requires_code'] is True
     assert code not in c.get('/api/config').text
-    for supplied in ('', 'incorrect', '错误邀请码'):
+    for supplied in ('', 'incorrect', 'invalid-invitation-café'):
         assert c.post('/api/signup', json={**credentials, 'registration_code':supplied}).status_code == 403
     assert c.post('/api/login', json=credentials).status_code == 401
     assert c.post('/api/signup', json={**credentials, 'registration_code':code}).status_code == 200

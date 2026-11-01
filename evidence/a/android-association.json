@@ -1,0 +1,10 @@
+{
+  "verified_at": "2026-11-01T01:24:02.242191+00:00",
+  "url": "https://desktop-jdferfe.taile24d30.ts.net/.well-known/assetlinks.json",
+  "package_name": "edu.usc.ee542.f1assistant",
+  "sha256_cert_fingerprint": "40:C7:CF:68:1A:2E:C4:25:14:6E:20:A3:27:40:E4:3C:E7:BD:41:AB:AF:E5:6F:EA:FF:6D:5D:8B:01:4E:FE:96",
+  "https_assetlinks_check": "passed",
+  "http_status": 200,
+  "device_twa_validation": "pending; requires the installed signed APK",
+  "source": "B commit 31e6928 and evidence/b-part2/assetlinks.json"
+}

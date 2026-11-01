@@ -30,7 +30,8 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: python -m pip install -r requirements-a.txt -r tests/requirements.txt
-      - run: python -m pytest tests -q
+      - name: Test A's web, RAG integration, public access, and Asset Links
+        run: python -m pytest tests/test_webapp.py tests/test_web_rag.py tests/test_public_access.py tests/test_assetlinks.py -q
       - run: node --check webapp/frontend/app.js
       - run: docker compose --env-file .env.example -f infra/compose.a.yml config --quiet
         env:
